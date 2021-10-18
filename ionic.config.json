@@ -1,0 +1,7 @@
+{
+  "name": "PediditosExpress",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
