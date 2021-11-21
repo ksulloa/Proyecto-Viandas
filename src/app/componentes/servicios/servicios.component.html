@@ -1,0 +1,71 @@
+<ion-header> 
+
+  <ion-toolbar> 
+    <h3 ion-title class="ion-text-center"> SERVICIOS
+       </h3>
+
+       <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="subtitulo"> 
+
+
+  <h3 class="subtitulo, ion-text-center">Restaurantes</h3>
+
+  
+
+<h3 class="subtitulo">Secos</h3>
+
+  <ion-slides>
+  
+  <ion-slide *ngFor="let item of arrayMenus">
+    
+    <ion-card no-margin color="danger">
+      
+      <img alt="menu" [src]='item.imagen' width="350" height="150" >
+    <h4>Sopas: {{item.sopa}}</h4>
+    <h4>Plato fuerte :{{item.platofuerte}}</h4>
+    <h4>Jugo:{{item.jugo}}</h4>
+   </ion-card>
+
+  </ion-slide>
+</ion-slides>
+
+
+<h3 class="subtitulo">BEBIDAS</h3>
+
+  <ion-slides>
+  <ion-slide *ngFor="let item of arrayColas">
+    <ion-card no-margin color="danger">
+    
+    <ion-card>
+      <img alt="menu" [src]='item.imagenColas' width="350" height="150" >
+    <h4>Colas: {{item.colas}}</h4>
+    
+   </ion-card>
+  </ion-card>
+  </ion-slide>
+</ion-slides>
+
+<ion-slides>
+  <ion-slide *ngFor="let item of arrayJugos">
+    
+    <ion-card no-margin color="danger">
+
+    <ion-card>
+      <img alt="menu" [src]='item.imagenJugos' width="350" height="150" >
+    <h4>Jugos: {{item.jugos}}</h4>
+    
+   </ion-card>
+  </ion-card>
+  </ion-slide>
+</ion-slides>
+
+
+  
+</ion-content>

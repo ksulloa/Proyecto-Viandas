@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+
+
+      <h5 ion-title class="ion-text-center">
+        LOGIN
+      </h5>
+
+
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<pre></pre>
+  <ion-item>
+   
+    <h3 ion-label>Correo</h3>
+    <ion-input [(ngModel)]="credenciales.correo"></ion-input>
+  </ion-item>
+  
+  <pre></pre>
+
+  <ion-item>
+    <h3 ion-label>Contraseña</h3>
+    <ion-input  [(ngModel)]="credenciales.password"></ion-input>
+  </ion-item>
+
+
+  <pre></pre>
+
+  <h3>
+    <ion-checkbox color="dark"></ion-checkbox>
+   Acepto las condiciones 
+  </h3>
+
+<pre></pre>
+
+   
+<ion-button (click)="login()">
+  LOGIN
+</ion-button>
+ 
+<pre></pre>
+
+<ion-button [routerLink]="['/registro']" routerLinkActive="router-link-active" >
+   REGISTRARSE
+</ion-button>
+
+
+
+
+<ion-content>
+
+</ion-content>

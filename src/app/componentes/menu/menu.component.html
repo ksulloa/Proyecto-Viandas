@@ -1,0 +1,40 @@
+<ion-list-header>
+  <ion-list-header>
+    Menú
+  </ion-list-header>
+</ion-list-header>
+
+ 
+<ion-menu-toggle>
+ <ion-item detail= "true"  [routerLink]="['/servicios']"   (click)="irServicios()">
+   <ion-label>
+     servicios
+   </ion-label>
+ </ion-item>
+</ion-menu-toggle>
+
+<ion-menu-toggle>
+ <ion-item detail= "true" [routerLink]="['/valoracion']"  (click)="irValoracion()">
+   <ion-label>
+     valoracion
+   </ion-label>
+ </ion-item>
+
+</ion-menu-toggle>
+ 
+<ion-menu-toggle *ngIf="login == false">
+<ion-item detail= "true"  [routerLink]="['/login']"  (click)="irLogin()" >
+   <ion-label>
+     Login
+   </ion-label>
+ </ion-item>
+</ion-menu-toggle>
+
+<ion-menu-toggle *ngIf="login">
+ <ion-item >
+    <ion-label>
+      Perfil
+    </ion-label>
+  </ion-item>
+</ion-menu-toggle>
+

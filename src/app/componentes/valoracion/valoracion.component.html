@@ -1,0 +1,57 @@
+<ion-header> 
+
+  <ion-toolbar> 
+    <h3 ion-title class="ion-text-center"> VALORACIÓN</h3>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    
+  </ion-toolbar>
+  
+</ion-header>
+
+
+
+<ion-content>
+  <h3 ion-title class="ion-text-center"> Calificanos</h3>
+  <img src="https://c.tenor.com/fNBtQnC4-iYAAAAi/come-on-lets-go.gif">
+  
+    <ion-col col-sm size="4">
+      
+      <ion-card-content content>
+      </ion-card-content>
+    
+    </ion-col>   
+
+
+    <form>
+      <p>
+        <h5 label for="t1">¿Qué calificación nos da?<abbr title="Este campo es obligatorio" aria-label="required"><pre></pre></abbr></h5>
+        <input type="text" id="t1" name="servicio" list="l1" required
+               pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range ">
+        <datalist id="l1">
+          <option>Excelente</option>
+          <option>Buena</option>
+          <option>Regular</option>
+          <option>Mala</option>
+          <option>Pésima</option>
+         </datalist>
+     
+      <p>
+        <h5 label for="t2">¿Cuál es tu dirección de correo electrónico? </h5>
+        <input type="email" id="t2" name="email">
+      
+      <p>
+        <h5 label for="t3">Deja un mensaje</h5><pre></pre>
+        <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
+     
+      <p>
+        <button>Enviar</button>
+      </p>
+    </form>
+  
+    
+</ion-content>
+
+
