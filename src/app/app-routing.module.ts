@@ -1,3 +1,4 @@
+import { CarritosComponent } from './componentes/carritos/carritos.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { ValoracionComponent } from './componentes/valoracion/valoracion.component';
 import { ServiciosComponent } from './componentes/servicios/servicios.component';
@@ -34,6 +35,17 @@ const routes: Routes = [
     {
       path: 'registro', component: RegistroComponent
     },
+    {
+      path: '', component: BienvenidosComponent
+      
+    },
+    {
+      path: '**', redirectTo:'bienvevidos', pathMatch:'full' 
+      
+    },
+    {
+      path: 'carritos', component: CarritosComponent
+    }
   
     
 ];

@@ -74,4 +74,8 @@ export class ServiciosComponent implements OnInit {
   
   }
 
+  carrito(){
+    console.log("añadir al carrito ")
+  }
+
 }

@@ -1,3 +1,5 @@
+import { PerfilComponent } from './componentes/perfil/perfil.component';
+import { CarritosComponent } from './componentes/carritos/carritos.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { environment } from './../environments/environment';
 import { BienvenidosComponent } from './componentes/bienvenidos/bienvenidos.component';
@@ -26,9 +28,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     LoginComponent,
     MenuComponent,
     ServiciosComponent,
-    ValoracionComponent,
-    
-   
+    ValoracionComponent, 
+    RegistroComponent,
+    CarritosComponent, 
+    PerfilComponent
     ],
   entryComponents: [],
   imports: [BrowserModule,

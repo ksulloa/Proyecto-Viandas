@@ -21,25 +21,14 @@
 
 <pre></pre>
   <ion-item>
-   
-    <h3 ion-label>Correo</h3>
+    <ion-label position="floating" >Correo</ion-label>
     <ion-input [(ngModel)]="credenciales.correo"></ion-input>
   </ion-item>
   
-  <pre></pre>
-
   <ion-item>
-    <h3 ion-label>Contraseña</h3>
+    <ion-label position="floating" >Contraseña</ion-label>
     <ion-input  [(ngModel)]="credenciales.password"></ion-input>
   </ion-item>
-
-
-  <pre></pre>
-
-  <h3>
-    <ion-checkbox color="dark"></ion-checkbox>
-   Acepto las condiciones 
-  </h3>
 
 <pre></pre>
 
@@ -48,7 +37,7 @@
   LOGIN
 </ion-button>
  
-<pre></pre>
+<h4 pre class="ion-text-center"> ó</h4>
 
 <ion-button [routerLink]="['/registro']" routerLinkActive="router-link-active" >
    REGISTRARSE
