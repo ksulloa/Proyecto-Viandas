@@ -1,3 +1,4 @@
+import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { CarritosComponent } from './componentes/carritos/carritos.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { ValoracionComponent } from './componentes/valoracion/valoracion.component';
@@ -24,6 +25,9 @@ const routes: Routes = [
    
     {
       path: 'menu', component: MenuComponent
+    },
+    {
+      path: 'perfil', component: PerfilComponent
     },
 
     {
