@@ -54,7 +54,7 @@ export class RegistroComponent implements OnInit {
       const id =  res.user.uid;
       this.datos.uid = id;
       this.datos.password = null
-      await this.firestore.creatDoc(this.datos, path, id)
+      await this.firestore.createDoc(this.datos, path, id)
       this.interaction.closeLoading();
       this.interaction.presentToast('Registro exitoso')
       this.router.navigate(['/inicio'])

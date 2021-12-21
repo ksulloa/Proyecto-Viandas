@@ -3,38 +3,62 @@
     Menú
   </ion-list-header>
 </ion-list-header>
+    
+<ion-menu-toggle>
+  <ion-item detail= "true"  [routerLink]="['/bienvenidos']">
+    <ion-icon name="home-outline"></ion-icon>
+    <ion-label>
+      BIENVENIDOS
+    </ion-label>
+  </ion-item>
+ </ion-menu-toggle>
 
  
-<ion-menu-toggle>
- <ion-item detail= "true"  [routerLink]="['/servicios']"   (click)="irServicios()">
+<ion-menu-toggle *ngIf="login">
+ <ion-item detail= "true"  [routerLink]="['/servicios']"  >
+  <ion-icon name="restaurant-outline"></ion-icon>
    <ion-label>
-     servicios
+     SERVICIOS
    </ion-label>
  </ion-item>
 </ion-menu-toggle>
 
-<ion-menu-toggle>
- <ion-item detail= "true" [routerLink]="['/valoracion']"  (click)="irValoracion()">
+<ion-menu-toggle *ngIf="login">
+ <ion-item detail= "true" [routerLink]="['/valoracion']"  >
+  <ion-icon name="star-half-outline"></ion-icon>
    <ion-label>
-     valoracion
+     VALORACIÓN
    </ion-label>
  </ion-item>
 
 </ion-menu-toggle>
  
 <ion-menu-toggle *ngIf="login == false">
-<ion-item detail= "true"  [routerLink]="['/login']"  (click)="irLogin()" >
+<ion-item detail= "true"  [routerLink]="['/login']"   >
+  <ion-icon name="people-circle-outline"></ion-icon>
    <ion-label>
-     Login
+     LOGIN
    </ion-label>
  </ion-item>
 </ion-menu-toggle>
 
 <ion-menu-toggle *ngIf="login">
- <ion-item >
+ <ion-item detail= "true"  [routerLink]="['/perfil']" >
+  <ion-icon name="person-circle-outline"></ion-icon>
     <ion-label>
-      Perfil
+      PERFIL
     </ion-label>
   </ion-item>
 </ion-menu-toggle>
 
+<ion-menu-toggle *ngIf="login ">
+  <ion-item detail="true" (click)="logout()">
+    <ion-icon name="log-in-outline"></ion-icon>
+    <ion-label>
+     SALIR
+    </ion-label>
+    <ion-icon ></ion-icon>
+  </ion-item>
+ </ion-menu-toggle>
+
+ 

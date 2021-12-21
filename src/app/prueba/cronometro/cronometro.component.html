@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Cronómetro
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid style="margin-top:200px ;">
+    <ion-row class="ion-justify-content-center">
+
+      <ion-col size="3" class="ion-text-center" >
+
+        <div class="minutos">
+          <div *ngIf="minutos < 10 " >
+          0{{minutos}}  
+          </div>
+
+          <div *ngIf="minutos > 10 " >
+            {{minutos}}  
+            </div>
+
+        </div>
+        
+      </ion-col>
+
+      <ion-col size="3" class="ion-text-center">
+        <div class="segundos">
+          <div *ngIf="segundos < 10 " >
+          0{{segundos}}  
+          </div>
+
+          <div *ngIf="segundos >= 10 " >
+            {{segundos}}  
+            </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="ion-justify-content-center">
+      <ion-col size="4">
+        <ion-button color= "success"  (click)= "play()">
+          <ion-label>
+            INICIAR
+          </ion-label>
+          <ion-icon slot="end" name="play-circle"></ion-icon>
+        </ion-button>
+      </ion-col>
+
+      <ion-col size="4">
+        <ion-button color= "dark" (click)= "resetear()" >
+          <ion-label>
+            RESETEAR
+          </ion-label>
+          <ion-icon slot="end" name="refresh-circle"></ion-icon>
+        </ion-button>
+      </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-justify-content-center">
+  <ion-col size="4">
+    <ion-button color= "dark" (click)= "adelantar()" >
+      <ion-label>
+        Adelantar
+      </ion-label>
+      <ion-icon slot="end" name="spece-circle"></ion-icon>
+    </ion-button>
+  </ion-col>
+
+  
+    <ion-col size="4">
+      <ion-button color= "dark" (click)= "pausa()" >
+        <ion-label>
+          Pausa
+        </ion-label>
+        <ion-icon slot="end" name="pause-circle"></ion-icon>
+      </ion-button>
+    </ion-col>
+ </ion-row>
+
+
+  </ion-grid>
+
+</ion-content>

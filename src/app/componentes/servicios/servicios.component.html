@@ -9,13 +9,7 @@
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
 
-      <ion-buttons slot="end">
-        <ion-button  [routerLink]="['/carritos']"  >
-          <ion-icon slot= "icon-only" name="cart-outline" ></ion-icon>
-          
-        
-        </ion-button>
-      </ion-buttons>
+      
 
   </ion-toolbar>
   
@@ -29,14 +23,14 @@
 
 <div class="accordion" id="accordionExample">
   <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
+    <h2  class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Lugar #1
+        COMEDOR EL CISNE
       </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong>RESTAUTANTE</strong> 
+        <strong class=" ion-text-center">RESTAUTANTE</strong> 
         <ion-slides>
   
           <ion-slide *ngFor="let item of arrayMenus">
@@ -47,8 +41,8 @@
             <h4>Sopas: {{item.sopa}}</h4>
             <h4>Plato fuerte :{{item.platofuerte}}</h4>
             <h4>Jugo:{{item.jugo}}</h4>
-              <ion-button color="#DB7093" (click)="carrito()">
-                <ion-icon slot="icon-only" name="add-circle-outline"></ion-icon>
+                <ion-button color="#DB7093" >
+                <ion-icon slot="icon-only" name="logo-whatsapp"></ion-icon>
               </ion-button>
            </ion-card>
            
@@ -79,6 +73,9 @@
             <h4>Sopas: {{item.sopa}}</h4>
             <h4>Plato fuerte :{{item.platofuerte}}</h4>
             <h4>Jugo:{{item.jugo}}</h4>
+            <ion-button color="#DB7093" [routerLink]="['']">
+              <ion-icon slot="icon-only" name="logo-whatsapp"></ion-icon>
+            </ion-button>
            </ion-card>
         
           </ion-slide>
@@ -106,6 +103,9 @@
             <h4>Sopas: {{item.sopa}}</h4>
             <h4>Plato fuerte :{{item.platofuerte}}</h4>
             <h4>Jugo:{{item.jugo}}</h4>
+            <ion-button color="#DB7093" [routerLink]="['']">
+              <ion-icon slot="icon-only" name="logo-whatsapp"></ion-icon>
+            </ion-button>
            </ion-card>
         
           </ion-slide>

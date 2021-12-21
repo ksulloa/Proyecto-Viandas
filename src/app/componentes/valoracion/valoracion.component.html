@@ -17,25 +17,13 @@
   <h3 ion-title class="ion-text-center"> Calificanos</h3>
   <img src="https://c.tenor.com/fNBtQnC4-iYAAAAi/come-on-lets-go.gif">
   
+  
     <ion-col col-sm size="4">
       
-      <ion-card-content content>
-      </ion-card-content>
+  
     
     </ion-col>  
     <form>
-      <p class="clasificacion">
-        <input id="radio1" type="radio" name="estrellas" value="5"><!--
-        --><label for="radio1">★</label><!--
-        --><input id="radio2" type="radio" name="estrellas" value="4"><!--
-        --><label for="radio2">★</label><!--
-        --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-        --><label for="radio3">★</label><!--
-        --><input id="radio4" type="radio" name="estrellas" value="2"><!--
-        --><label for="radio4">★</label><!--
-        --><input id="radio5" type="radio" name="estrellas" value="1"><!--
-        --><label for="radio5">★</label>
-      </p>
      
       <p>
         <h5 label for="t1">¿Qué calificación nos da?<abbr title="Este campo es obligatorio" aria-label="required"><pre></pre></abbr></h5>
@@ -62,7 +50,60 @@
       </p>
     </form>
   
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <symbol id="star" viewBox="0 0 28 28" preserveAspectRatio="xMaxYMax meet">
+                <title>Star Rating</title>
+                <path class="star"
+                      d="M13.996,22.501 L22.649,27.997 L20.352,17.637 L27.996,10.667 L17.930,9.768 L13.996,-0.003 L10.063,9.768 L-0.003,10.667 L7.641,17.637 L5.345,27.997 L13.996,22.501 Z"/>
+            </symbol>
+    </svg>
     
-</ion-content>
+    
+    <div class="container">
+      <div class="rating">
+      <fieldset class="rating-fieldset">
+        <span><input type="checkbox" id="star5" class="rating-checkbox" value="5" name="star" /><label class="full" for="star5" title="Awesome - 5 stars">
+                                                            <svg role="img" aria-label="rating">
+                                                                <use xlink:href="#star"></use>
+                                                            </svg>
+                                                        </label>
+        <input type="checkbox" id="star4half" class="rating-checkbox" value="4.5" name="star" /><label class="half" for="star4half" title="Pretty good - 4.5 stars" name="star">    <svg role="img" aria-label="rating">                                                 <use xlink:href="#star"></use>                                           </svg>                                 
+          </label></span>
+        <span> <input type="checkbox" id="star4" class="rating-checkbox" value="4" name="star" /><label class="full" for="star4" title="Pretty good - 4 stars">
+                                                            <svg role="img" aria-label="rating">
+                                                                <use xlink:href="#star"></use>
+                                                            </svg>
+                                                        </label>
+        <input type="checkbox" id="star3half" class="rating-checkbox" value="3.5" name="star" /><label class="half" for="star3half" title="Meh - 3.5 stars">   <svg role="img" aria-label="rating">                                                 <use xlink:href="#star"></use>                                           </svg>                                
+         </label></span>
+        <span><input type="checkbox" id="star3" class="rating-checkbox" value="3" name="star" /><label class="full" for="star3" title="Meh - 3 stars" name="star">
+                                                            <svg role="img" aria-label="rating">
+                                                                <use xlink:href="#star"></use>
+                                                            </svg>
+                                                        </label>
+        <input type="checkbox" id="star2half" class="rating-checkbox" value="2.5" name="star" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars">   <svg role="img" aria-label="rating">                                                 <use xlink:href="#star"></use>                                           </svg>                                  
+          </label></span>
+        <span><input type="checkbox" id="star2" class="rating-checkbox" value="2" name="star" /><label class="full" for="star2" title="Kinda bad - 2 stars">
+                                                            <svg role="img" aria-label="rating">
+                                                                <use xlink:href="#star"></use>
+                                                            </svg>
+                                                        </label>
+        <input type="checkbox" id="star1half" class="rating-checkbox" value="1.5" name="star" /><label class="half" for="star1half" title="Meh - 1.5 stars">  <svg role="img" aria-label="rating">                                                 <use xlink:href="#star"></use>                                           </svg>                                   
+          </label></span>
+        <span><input type="checkbox" id="star1" class="rating-checkbox" value="1" name="star" /><label class="full" for="star1" title="Sucks big time - 1 star">
+                                                            <svg role="img" aria-label="rating">
+                                                                <use xlink:href="#star"></use>
+                                                            </svg>
+                                                        </label>
+        <input type="checkbox" id="starhalf" class="rating-checkbox" value="0.5" name="star" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars">
+          <svg role="img" aria-label="rating">                                                 <use xlink:href="#star"></use>                                           </svg>
+          </label></span>
+        
+    
 
 
+
+
+
+
+  

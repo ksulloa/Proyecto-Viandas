@@ -1,5 +1,18 @@
+import { Felicitaciones1Component } from './prueba/felicitaciones1/felicitaciones1.component';
+import { AhorrosComponent } from './prueba/ahorros/ahorros.component';
+import { FinanzasComponent } from './prueba/finanzas/finanzas.component';
+import { FelicitacionesComponent } from './prueba/felicitaciones/felicitaciones.component';
+import { PremiosComponent } from './prueba/premios/premios.component';
+import { CalculadoraComponent } from './prueba/calculadora/calculadora.component';
+import { PerdidaComponent } from './prueba/perdida/perdida.component';
+import { PaseComponent } from './prueba/pase/pase.component';
+import { NotasComponent } from './prueba/notas/notas.component';
+import { BusComponent } from './prueba/bus/bus.component';
+import { DomoticaComponent } from './prueba/domotica/domotica.component';
+import { CronometroComponent } from './prueba/cronometro/cronometro.component';
+import { AsistenciaComponent } from './prueba/asistencia/asistencia.component';
+import { AjustesComponent } from './componentes/ajustes/ajustes.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
-import { CarritosComponent } from './componentes/carritos/carritos.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { environment } from './../environments/environment';
 import { BienvenidosComponent } from './componentes/bienvenidos/bienvenidos.component';
@@ -23,6 +36,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+
 @NgModule({
   declarations: [AppComponent,
     BienvenidosComponent,
@@ -31,8 +45,22 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ServiciosComponent,
     ValoracionComponent, 
     RegistroComponent,
-    CarritosComponent, 
-    PerfilComponent
+    PerfilComponent,
+    AjustesComponent,
+    AsistenciaComponent,
+    CronometroComponent,
+    DomoticaComponent,
+    BusComponent,
+    NotasComponent,
+    PaseComponent,
+    PerdidaComponent,
+    CalculadoraComponent,
+    PremiosComponent,
+    FelicitacionesComponent,
+    FinanzasComponent,
+    AhorrosComponent,
+    Felicitaciones1Component
+  
     ],
   entryComponents: [],
   imports: [BrowserModule,

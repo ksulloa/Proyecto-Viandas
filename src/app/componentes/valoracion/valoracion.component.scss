@@ -36,4 +36,142 @@
   
 
 
+
+
+
+  *{
+    box-sizing:border-box;
+  }
+  .rating {
+    
+    width:100%;
+    padding:2em;
+    
+    input[name="star"] {
+      display: none;
+      width: 0;
+      opacity: 0;
+      margin-left: -2px;
+  
+      &:focus ~ label svg {
+        fill: #f2a200;
+      }
+  
+      &:checked ~ label svg {
+        fill: #f2a200;
+      }
+    }
+    span {
+      display: inline-block;
+      position: relative;
+      float: right;
+      label {
+        float: right;
+        cursor: pointer;
+  
+        svg {
+          fill: #CCC;
+          color: transparent;
+          transition: color 0.2s ease-in-out;
+          width: 50px;
+          height: 50px;
+        }
+  
+        &:hover {
+          svg {
+            fill: #f2a200;
+          }
+  
+          ~ label {
+            svg {
+              fill: #f2a200;
+            }
+  
+            &.half {
+              svg {
+                fill: #f2a200;
+              }
+            }
+          }
+        }
+  
+        &.half {
+          overflow: hidden;
+          position: absolute;
+          width: 25px;
+          svg {
+            fill: none;
+          }
+  
+          &:hover {
+            svg {
+              fill: #f2a200;
+            }
+          }
+        }
+      }
+  
+      &:hover {
+        ~ span label svg {
+          fill: #f2a200;
+        }
+      }
+  
+      &.active ~ span {
+        label svg {
+          fill: #f2a200;
+        }
+      }
+    }
+  }
+  
+  /*presentational styles*/
+  html{
+    margin:0;
+    padding:0;
+  }
+  
+  .container {
+    width: 40em;
+    margin: 0 auto;
+  }
+  fieldset {
+    display: inline-block;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+  }
+  
+  small {
+    display: block;
+    text-align: right;
+  }
+  
+    code{
+      text-transform:lowercase;
+    
+  }
+  p{
+    line-height:1.5;
+  
+  }
+  footer{
+    width:100%;
+    padding: 2em 0;
+    background: darken(#363795, 5%);
+    
+    a{
+      color: #fefefe;
+      transition: color .2s ease-in;
+      
+      &:hover{
+        color:#cbb4d4;
+      }
+    }
+    h3{
+      text-transform: capitalize;
+    }
+  }
+  
+  
   

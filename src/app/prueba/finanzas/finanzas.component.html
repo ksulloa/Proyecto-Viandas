@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button>
+
+      </ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+    FINANZAS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">Ingreso</ion-label>
+    <ion-input type="number" [(ngModel)]="ingreso" ></ion-input>
+  </ion-item >
+
+  <ion-item>
+    <ion-label position="floating">Gastos</ion-label>
+    <ion-input type="number" [(ngModel)]="gasto"  ></ion-input>
+  </ion-item>
+
+ 
+
+  <ion-button (click)="ingresoD()" routerLinkActive="router-link-active" expand="full" color= "light">Ingreso</ion-button>
+  <ion-button (click)="gastoD()" routerLinkActive="router-link-active" expand="full" color= "light">Gasto</ion-button>
+
+  <ion-item>
+    <ion-label >total ><strong>
+      {{respuesta}}
+    </strong> </ion-label>
+  </ion-item>
+
+  <div>
+    <ion-button *ngIf="respuesta > 0"  [routerLink]="['/felicitaciones']" routerLinkActive="router-link-active" expand="full" color= "light">ver</ion-button>
+    <ion-button *ngIf="respuesta < 0" [routerLink]="['/ahorros']" routerLinkActive="router-link-active" expand="full" color= "light">ver</ion-button>
+
+
+  </div>
+
+ 
+</ion-content>

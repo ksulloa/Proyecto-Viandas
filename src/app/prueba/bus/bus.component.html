@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Bus
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label position="floating">
+       Ingresa número de asientos:
+    </ion-label>
+    <ion-input type="number" [(ngModel)]="num"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="crear()">
+    Crear
+  </ion-button>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button (click)="showLibres()">
+          Libres
+        </ion-button>
+      </ion-col>
+      <ion-col class="ion-text-center">
+        <ion-button (click)="showOcupados()">
+          Ocupados
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-list>
+
+    <div *ngFor="let asiento of asientos, let i = index">
+      <ion-item *ngIf="asiento.estado == libres">
+        <ion-label position="floating"> {{i + 1}}</ion-label>
+        <ion-input [(ngModel)]="asiento.nombre"></ion-input>
+        <ion-icon (click)="asignar(asiento)" slot="end" name="add-circle"></ion-icon>
+      </ion-item>
+    </div>
+
+    
+  </ion-list>
+
+
+
+  </ion-content>

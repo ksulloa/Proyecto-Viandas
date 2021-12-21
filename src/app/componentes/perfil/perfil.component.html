@@ -6,6 +6,7 @@
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
 
+
     <ion-title>
      Mi perfil
     </ion-title>
@@ -30,6 +31,19 @@
       </ion-label>
       <ion-icon (click)="editAtributo('nombre')" slot="end" name="create"></ion-icon>
     </ion-item>
+    <ion-item>
+      <ion-label>
+        {{info.direccion}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('direccion')" slot="end" name="create"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        {{info.password}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('contraseña')" slot="end" name="create"></ion-icon>
+    </ion-item>
+   
     
       
   </ion-list>

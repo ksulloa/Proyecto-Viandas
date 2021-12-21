@@ -2,7 +2,7 @@ export interface Merienda{
   
   platoFuerte: string;
   jugo: string;
-  mesa: 'C'| 'P';
+  
 
 }
 
@@ -11,10 +11,21 @@ export interface Menu{
   platoFuerte: string;
   jugo: string;
   cubiertos: number;
-  mesa: 'C'| 'P';
   imagen: string;
   
 
+}
+export interface Pedidos {
+pedido1:{
+nombre: string;
+telefono: number
+  }
+pedido2:{
+nombre: string;
+telefono: number
+      }
+viandas?: string;
+id: string;
 }
 
 export interface UserI {
@@ -26,3 +37,16 @@ export interface UserI {
   password: string;
   perfil: 'cliente'| 'admin',
 }
+
+export interface Local {
+  lunes: {
+    descripcion: string;
+    ubicacion: string;
+    foto: string;
+  };
+  
+} 
+
+
+
+

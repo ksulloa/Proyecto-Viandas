@@ -24,11 +24,9 @@ export class PerfilComponent implements OnInit {
       console.log('estoy en perfil');
       this.authService.stateUser().subscribe( res => {
           console.log('en perfil - estado autenticacion -> ', res);
-          this.getUid();
-          
+          this.getUid(); 
       });
-      this.getUid();
-     
+      this.getUid();    
   }
     
   async getUid() {
@@ -38,10 +36,8 @@ export class PerfilComponent implements OnInit {
           console.log('uid -> ', this.uid);
           this.getInfoUser();
         } else {
-          console.log('no existe uid');
-          
+          console.log('no existe uid');   
         }
-
   }
 
   getInfoUser() {

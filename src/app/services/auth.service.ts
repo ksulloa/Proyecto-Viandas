@@ -13,10 +13,10 @@ export class AuthService {
   constructor(private authfirebase: AngularFireAuth) { }
 
   login(correo:string, password: string){
-   return this.authfirebase.signInWithEmailAndPassword(correo, password)
-  
-  }
-  logut() {
+    return this.authfirebase.signInWithEmailAndPassword(correo, password)
+   
+   }
+  logout() {
     this.authfirebase.signOut();
   }
 
@@ -32,7 +32,8 @@ export class AuthService {
     const user = await this.authfirebase.currentUser;
     if (user) {
       return user.uid;
-    } else {
+    } 
+    else {
       return null;
     }
   }

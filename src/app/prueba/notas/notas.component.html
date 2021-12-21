@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      NOTAS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+<ion-item>
+  <ion-label position="floating"> Ingrese sus notas</ion-label>
+  <ion-input type="number" [(ngModel)]="calificaciones"></ion-input>
+</ion-item>
+
+
+<ion-button expand="full" color= "light" (click)="ingresarN()">Ingresar</ion-button>
+
+<div>
+ 
+  <ion-button *ngIf="promedio >= 70"  [routerLink]="['/pase']" routerLinkActive="router-link-active" expand="full" color= "light">Ver </ion-button>
+   <ion-button *ngIf="promedio <= 70" [routerLink]="['/perdida']" routerLinkActive="router-link-active" expand="full" color= "light">Ver</ion-button>
+</div>
+
+<ion-item color= "sucess">
+  {{promedio}}
+</ion-item>
+
+ 
+ 

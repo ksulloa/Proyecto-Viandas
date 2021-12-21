@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">
+      Domotica
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-row class="ion-justify-content-center">
+    <ion-col  *ngFor="let foco of focos" size = "6" class = "ion-text-center">
+      
+      <div (click)="cambiarEstado(foco)" [ngClass]="{'foco-on': foco.estado, 'foco-off': ! foco.estado}" >
+        {{foco.nombre}}
+      </div>
+
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
         console.log('res -> ', res);
         this.interaction.closeLoading();
         this.interaction.presentToast('Ingresado con exito');
-        this.router.navigate(['/home'])
+        this.router.navigate(['/bienvenidos'])
     }
   }
 
