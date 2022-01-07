@@ -17,15 +17,20 @@ export class FirestoreService {
     return collection.doc(id).set(data);
   }
 
+  createRes(data:any, path:string, id:string){
+
+    const collection = this.firestore.collection(path);
+    return collection.doc(id).set(data);
+  }
+
   getId(){
     return this.firestore.createId();
   }
-
+  
   getCollection <tipo> (path:string) {
 
     const collection = this.firestore.collection<tipo>(path);
-    return collection.valueChanges();
-
+    return collection.valueChanges()
   }
 
   getDoc<tipo> (path: string, id: string) {

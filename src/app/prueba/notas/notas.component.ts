@@ -12,11 +12,7 @@ export class NotasComponent implements OnInit {
   contador= 0;
   promedio= 0
 
-
-
   constructor() { }
-
-  
 
   ingresarN(){ 
 

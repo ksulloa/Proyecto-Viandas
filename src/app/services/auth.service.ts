@@ -1,4 +1,4 @@
-import { UserI } from './../models/models.component';
+import { UserI, Restaurantes } from './../models/models.component';
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
@@ -24,10 +24,16 @@ export class AuthService {
     return this.authfirebase.createUserWithEmailAndPassword(datos.correo, datos.password)
 
   }
-
+ 
+ 
   stateUser(){
     return this.authfirebase.authState
   }
+
+  stateRest(){
+    return this.authfirebase.authState
+  }
+
   async getUid() {
     const user = await this.authfirebase.currentUser;
     if (user) {
@@ -37,5 +43,15 @@ export class AuthService {
       return null;
     }
   }
+  async getRestid() {
+    const rest = await this.authfirebase.currentUser;
+    if (rest) {
+      return rest.uid;
+    } 
+    else {
+      return null;
+    }
+  }
+
   
 }

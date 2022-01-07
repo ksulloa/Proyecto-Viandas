@@ -25,89 +25,31 @@
   <div class="accordion-item">
     <h2  class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        COMEDOR EL CISNE
+        ASADOS
       </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong class=" ion-text-center">RESTAUTANTE</strong> 
+        <strong class=" ion-text-center">RESTAUTANTES</strong> 
         <ion-slides>
   
-          <ion-slide *ngFor="let item of arrayMenus">
+          <ion-slide *ngFor="let restaurante of restaurantes">
             
             <ion-card no-margin color="danger">
               
-              <img alt="menu" [src]='item.imagen' width="350" height="150" >
-            <h4>Sopas: {{item.sopa}}</h4>
-            <h4>Plato fuerte :{{item.platofuerte}}</h4>
-            <h4>Jugo:{{item.jugo}}</h4>
+              <img alt="menu" [src]='restaurante.foto' width="350" height="150" >
+            <h4>Nombre: {{restaurante.nombre}}</h4>
+            <h4>Descripción: {{restaurante.descripcion}}</h4>
+            <h4>Número: {{restaurante.numero}}</h4>
+            <h4>Ubicación :{{restaurante.ubicacion}}</h4>
+            <h4 >valorciones :{{restaurante.numValoraciones}}</h4>
+            <h4>valoracion :{{restaurante.valoracion}}</h4>
+            
                 <ion-button color="#DB7093" >
                 <ion-icon slot="icon-only" name="logo-whatsapp"></ion-icon>
               </ion-button>
            </ion-card>
            
-          </ion-slide>
-        </ion-slides>
-        
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Lugar #2
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      
-      
-      <div class="accordion-body">
-        <strong>RESTAURANTE</strong> 
-        <ion-slides>
-  
-          <ion-slide *ngFor="let item of arrayMenus">
-            
-            <ion-card no-margin color="danger">
-              
-              <img alt="menu" [src]='item.imagen' width="350" height="150" >
-            <h4>Sopas: {{item.sopa}}</h4>
-            <h4>Plato fuerte :{{item.platofuerte}}</h4>
-            <h4>Jugo:{{item.jugo}}</h4>
-            <ion-button color="#DB7093" [routerLink]="['']">
-              <ion-icon slot="icon-only" name="logo-whatsapp"></ion-icon>
-            </ion-button>
-           </ion-card>
-        
-          </ion-slide>
-        </ion-slides>
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Lugar #3
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>RESTAURANTE</strong>
-
-        <ion-slides>
-  
-          <ion-slide *ngFor="let item of arrayMenus">
-            
-            <ion-card no-margin color="danger">
-              
-              <img alt="menu" [src]='item.imagen' width="350" height="150" >
-            <h4>Sopas: {{item.sopa}}</h4>
-            <h4>Plato fuerte :{{item.platofuerte}}</h4>
-            <h4>Jugo:{{item.jugo}}</h4>
-            <ion-button color="#DB7093" [routerLink]="['']">
-              <ion-icon slot="icon-only" name="logo-whatsapp"></ion-icon>
-            </ion-button>
-           </ion-card>
-        
           </ion-slide>
         </ion-slides>
         
@@ -120,6 +62,8 @@
 
 
 
-
+<ion-button [routerLink]="['/agregar-local']" expand="block" shape="round">
+  Registrar Local
+</ion-button>
 
 </ion-content>

@@ -1,3 +1,4 @@
+import { AgregarLocalComponent } from './componentes/agregar-local/agregar-local.component';
 import { Felicitaciones1Component } from './prueba/felicitaciones1/felicitaciones1.component';
 import { AhorrosComponent } from './prueba/ahorros/ahorros.component';
 import { FinanzasComponent } from './prueba/finanzas/finanzas.component';
@@ -11,7 +12,6 @@ import { BusComponent } from './prueba/bus/bus.component';
 import { DomoticaComponent } from './prueba/domotica/domotica.component';
 import { CronometroComponent } from './prueba/cronometro/cronometro.component';
 import { AsistenciaComponent } from './prueba/asistencia/asistencia.component';
-import { AjustesComponent } from './componentes/ajustes/ajustes.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { environment } from './../environments/environment';
@@ -46,7 +46,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     ValoracionComponent, 
     RegistroComponent,
     PerfilComponent,
-    AjustesComponent,
     AsistenciaComponent,
     CronometroComponent,
     DomoticaComponent,
@@ -59,7 +58,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     FelicitacionesComponent,
     FinanzasComponent,
     AhorrosComponent,
-    Felicitaciones1Component
+    Felicitaciones1Component,
+    AgregarLocalComponent
   
     ],
   entryComponents: [],

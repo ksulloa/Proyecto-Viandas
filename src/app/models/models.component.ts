@@ -1,33 +1,3 @@
-export interface Merienda{
-  
-  platoFuerte: string;
-  jugo: string;
-  
-
-}
-
-export interface Menu{
-  sopa: string;
-  platoFuerte: string;
-  jugo: string;
-  cubiertos: number;
-  imagen: string;
-  
-
-}
-export interface Pedidos {
-pedido1:{
-nombre: string;
-telefono: number
-  }
-pedido2:{
-nombre: string;
-telefono: number
-      }
-viandas?: string;
-id: string;
-}
-
 export interface UserI {
   nombre: string;
   direccion: string;
@@ -38,15 +8,19 @@ export interface UserI {
   perfil: 'cliente'| 'admin',
 }
 
-export interface Local {
-  lunes: {
+export interface Restaurantes {
+    nombre: string;
+    restid: string;
     descripcion: string;
+    numero: number;
     ubicacion: string;
     foto: string;
-  };
+    valoracion?: number;
+    numValoraciones?:number;
+  }
   
-} 
-
+  
+ 
 
 
 
