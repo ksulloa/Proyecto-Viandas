@@ -1,3 +1,4 @@
+import { AgregarPlatillosComponent } from './componentes/agregar-platillos/agregar-platillos.component';
 import { AgregarLocalComponent } from './componentes/agregar-local/agregar-local.component';
 import { Felicitaciones1Component } from './prueba/felicitaciones1/felicitaciones1.component';
 import { AhorrosComponent } from './prueba/ahorros/ahorros.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
     {path: 'valoracion', component: ValoracionComponent},
     {path: 'registro', component: RegistroComponent},
     {path: 'agregar-local', component: AgregarLocalComponent},
+    {path: 'agregar-platillos', component: AgregarPlatillosComponent},
     {path: '', component: BienvenidosComponent},
     {path: '**', redirectTo:'bienvevidos', pathMatch:'full' },
     {path: 'asistencia',component: AsistenciaComponent },

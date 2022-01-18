@@ -1,3 +1,4 @@
+import { AgregarPlatillosComponent } from './componentes/agregar-platillos/agregar-platillos.component';
 import { AgregarLocalComponent } from './componentes/agregar-local/agregar-local.component';
 import { Felicitaciones1Component } from './prueba/felicitaciones1/felicitaciones1.component';
 import { AhorrosComponent } from './prueba/ahorros/ahorros.component';
@@ -34,6 +35,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 
@@ -59,7 +61,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     FinanzasComponent,
     AhorrosComponent,
     Felicitaciones1Component,
-    AgregarLocalComponent
+    AgregarLocalComponent,
+    AgregarPlatillosComponent
   
     ],
   entryComponents: [],
@@ -71,10 +74,9 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
     AngularFirestoreModule,
+    AngularFireStorageModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
-      // Register the ServiceWorker as soon as the app is stable
-      // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     })],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],

@@ -4,13 +4,9 @@
      
     <h3 ion-title class="ion-text-center"> AGREGAR LOCAL
        </h3>
-
        <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
-
-      
-
   </ion-toolbar>
   
 </ion-header>
@@ -18,7 +14,7 @@
 
 <ion-content>
   
-  
+  <div>
     <ion-card-content>
       <ion-item>
         <ion-label position="floating" >Nombre Restaurante:</ion-label>
@@ -40,16 +36,33 @@
         <ion-input [(ngModel)]="restaurante.ubicacion" ></ion-input>
       </ion-item>
     
+    
       <ion-item>
-        <ion-label position="floating" >Foto:</ion-label>
-        <ion-input [(ngModel)]="restaurante.foto" ></ion-input>
+        <ion-label  >Foto</ion-label>
+        <ion-buttons slot="end">
+          <ion-button >
+            <label for="file-upload">
+              <ion-icon slot="icon-only" name="images"></ion-icon>
+            </label>
+            <input (change)= "newImageUpload($event)" id="file-upload" style="display: none;" type="file" accept="imagen/">
+          </ion-button>
+        </ion-buttons>
       </ion-item>
-  
-      <ion-button (click)="getRestaurant()">
-        Registrar
-       </ion-button>
-  
+     
+      
+      
+      <ion-input [(ngModel)]="restaurante.foto" ></ion-input>
+      
 </ion-card-content>
+</div>
+<ion-buttons >
+ <ion-button (click)="getRestaurant()" expand="block" fill="clear" shape="round">
+   
+     <ion-icon slot="icon-only" name="save-outline" color="dark"></ion-icon>
+   
+ </ion-button>
+</ion-buttons>
+
 </ion-content>
   
 

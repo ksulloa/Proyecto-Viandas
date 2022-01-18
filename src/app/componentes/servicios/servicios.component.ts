@@ -13,6 +13,7 @@ export class ServiciosComponent implements OnInit {
   restaurantes: Restaurantes[] = []
   sumar = 0;
   promedio=0;
+  
   constructor(private firestore: FirestoreService) {
   }
   
@@ -59,7 +60,8 @@ export class ServiciosComponent implements OnInit {
             console.log('la valoracion es:', res, resta.nombre);
             resta.numValoraciones = res.length
             resta.valoracion = this.promedio
-          } else {
+          } 
+          else {
             resta.numValoraciones = 0
             resta.valoracion = 0
           }

@@ -1,10 +1,86 @@
 .content{
-    margin: 40px;
+    margin: 20px;
 }
 
 ion-button{
     background-color: transparent;
 }
 
+.slider{
+    background: linear-gradient(#EED8BC,#703A0E);
+    color: #ffff;
+    margin: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
 
+.alinear{
+    text-align: left;
+    margin-left: 10px;
+}
+.img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.foto{
+    height: 300px;
+    width: 300px;
+}
+
+.icono{
   
+  font-size: 50px ;
+  margin: 10px;
+  text-align: center;
+  color: #000;
+  
+
+}
+
+.color{
+  background-color: #F4F3F6;
+  border-radius: 200px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+ 
+}
+
+
+#form {
+    width: 250px;
+    margin: 0 auto;
+    height: 50px;
+  }
+  
+  #form p {
+    text-align: center;
+  }
+  
+  #form label {
+    font-size: 20px;
+  }
+  
+  input[type="radio"] {
+    display: none;
+  }
+  
+  label {
+    color: grey;
+  }
+  
+  .clasificacion {
+    direction: rtl;
+    unicode-bidi: bidi-override;
+    text-align: end;
+  }
+  
+  label:hover,
+  label:hover ~ label {
+    color: orange;
+  }
+  
+  input[type="radio"]:checked ~ label {
+    color: orange;
+  }

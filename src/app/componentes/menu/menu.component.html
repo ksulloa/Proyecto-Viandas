@@ -14,7 +14,7 @@
  </ion-menu-toggle>
 
  
-<ion-menu-toggle >
+<ion-menu-toggle *ngIf="login">
  <ion-item detail= "true"  [routerLink]="['/servicios']"  >
   <ion-icon name="restaurant-outline"></ion-icon>
    <ion-label>

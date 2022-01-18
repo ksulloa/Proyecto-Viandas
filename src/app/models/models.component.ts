@@ -18,7 +18,14 @@ export interface Restaurantes {
     valoracion?: number;
     numValoraciones?:number;
   }
-  
+
+
+export interface Platillos{
+  nombre: string;
+  descripcion: string;
+  precio: number;
+  foto: string;
+}
   
  
 

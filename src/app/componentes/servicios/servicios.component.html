@@ -21,33 +21,57 @@
 <ion-card>
   
 
-<div class="accordion" id="accordionExample">
+<div  *ngFor="let restaurante of restaurantes" class="accordion" id="accordionExample">
   <div class="accordion-item">
     <h2  class="accordion-header" id="headingOne">
       <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        ASADOS
+        {{restaurante.nombre}}
       </button>
     </h2>
     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
       <div class="accordion-body">
-        <strong class=" ion-text-center">RESTAUTANTES</strong> 
+        <strong >RESTAUTANTES</strong> 
         <ion-slides>
   
-          <ion-slide *ngFor="let restaurante of restaurantes">
+          <ion-slide >
+
+           
             
-            <ion-card no-margin color="danger">
-              
-              <img alt="menu" [src]='restaurante.foto' width="350" height="150" >
-            <h4>Nombre: {{restaurante.nombre}}</h4>
-            <h4>Descripción: {{restaurante.descripcion}}</h4>
-            <h4>Número: {{restaurante.numero}}</h4>
-            <h4>Ubicación :{{restaurante.ubicacion}}</h4>
-            <h4 >valorciones :{{restaurante.numValoraciones}}</h4>
-            <h4>valoracion :{{restaurante.valoracion}}</h4>
+            <ion-card no-margin class="slider" >
+<ion-card-content>
+  <ion-buttons slot="end">
+    <ion-button >
+      <img src="https://cdn-icons.flaticon.com/png/512/1665/premium/1665680.png?token=exp=1642031252~hmac=485d698c35b176af8e26c8db2d7775e7" >
+    </ion-button>
+  </ion-buttons>
+  
+</ion-card-content>
+            <img alt="local" class="foto" [src]='restaurante.foto'  >
+            <h4 class="alinear">Descripción: {{restaurante.descripcion}}</h4>
+            <h4 class="alinear" >valorciones :{{restaurante.numValoraciones}}</h4>
+            <h4 class="alinear">valoracion :{{restaurante.valoracion}}</h4>
             
                 <ion-button color="#DB7093" >
-                <ion-icon slot="icon-only" name="logo-whatsapp"></ion-icon>
+                  <img class="img" src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" >
+                  <h4>Número: {{restaurante.numero}}</h4>
               </ion-button>
+
+              <ion-button color="#DB7093" >
+                <img class="img" src="https://cdn-icons.flaticon.com/png/512/2875/premium/2875433.png?token=exp=1642032652~hmac=319c9e661daa2b5a96591ed2cd4d9c86" >
+                <h4> Ubicación: {{restaurante.ubicacion}}</h4>
+            </ion-button>
+            <div>
+              <input id="radio1" type="radio" name="estrellas" value="1"><!--
+              --><label style="font-size: 20px;" for="radio1">★</label><!--
+              --><input id="radio2" type="radio" name="estrellas" value="2"><!--
+              --><label style="font-size: 20px;" for="radio2">★</label><!--
+              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+              --><label style="font-size: 20px;" for="radio3">★</label><!--
+              --><input id="radio4" type="radio" name="estrellas" value="4"><!--
+              --><label style="font-size: 20px;" for="radio4">★</label><!--
+              --><input id="radio5" type="radio" name="estrellas" value="5"><!--
+              --><label style="font-size: 20px;" for="radio5">★</label>  
+            </div>
            </ion-card>
            
           </ion-slide>
@@ -61,9 +85,17 @@
 </ion-card>
 
 
+<ion-card class="color">
+  <ion-card-content  >
+    <ion-buttons >
+      <ion-button  [routerLink]="['/agregar-local']">
+        <ion-icon class="icono" name="storefront-sharp"></ion-icon>
+        REGISTRAR LOCAL
+      </ion-button>
+    </ion-buttons>
+  </ion-card-content>
+  
+</ion-card>
 
-<ion-button [routerLink]="['/agregar-local']" expand="block" shape="round">
-  Registrar Local
-</ion-button>
 
 </ion-content>
