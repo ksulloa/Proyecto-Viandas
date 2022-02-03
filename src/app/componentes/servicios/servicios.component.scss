@@ -2,21 +2,23 @@
     margin: 20px;
 }
 
-ion-button{
-    background-color: transparent;
-}
+
 
 .slider{
-    background: linear-gradient(#EED8BC,#703A0E);
+    background: linear-gradient(#FF9A00,#CA312B,#6D1A13);
     color: #ffff;
     margin: 1px;
     font-family: Arial, Helvetica, sans-serif;
+    border-radius: 40px;
     
 }
 
 .alinear{
     text-align: left;
-    margin-left: 10px;
+    margin-left: 20px;
+    margin-right: 10px;
+    font-family: fantasy;
+    
 }
 .img{
     width: 30px;
@@ -27,15 +29,15 @@ ion-button{
 .foto{
     height: 300px;
     width: 300px;
+    border-radius: 40px
 }
 
 .icono{
   
-  font-size: 50px ;
+  font-size: 30px ;
   margin: 10px;
   text-align: center;
   color: #000;
-  
 
 }
 
@@ -47,6 +49,16 @@ ion-button{
  
 }
 
+.acordion{
+  background-color:black ;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: white;
+}
+
+
+.card{
+  height: 150px;
+}
 
 #form {
     width: 250px;

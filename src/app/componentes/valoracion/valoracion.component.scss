@@ -1,177 +1,125 @@
+.content{
+  margin: 20px;
+}
+
+.estrellas{
+  color: white;
+  font-size: 25px;
+  margin-left: 5px;
+  margin-top: 10px;
+  margin-bottom: 4%;
+  opacity: 1.0;
+}
+
+.enviar{
+  margin-left: 20px;
+  font-size: 30px;
+  color: #EE9023;
+  border:#EE9023 2px;
+  border-radius: 20px;
+  opacity: 1.0;
+
+}
+
+.enviar:hover{
+  color: #45B552;
+}
+.card{
+  border:3px ;
+  background-color: black;
+  border-radius:20px;
+  opacity: 0.7;
+}
+
+.slider{
+  background: linear-gradient(#FF9A00,#CA312B,#6D1A13);
+  color: #ffff;
+  margin: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 40px;
+  
+}
+
+.alinear{
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 10px;
+  font-family: fantasy;
+  
+}
+.img{
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.foto{
+  height: 300px;
+  width: 300px;
+  margin-left:10px;
+  margin-right:20px;
+  border-radius: 40px
+}
+
+.icono{
+
+font-size: 30px ;
+margin: 10px;
+text-align: center;
+color: #000;
+
+}
+
+.color{
+background-color: #F4F3F6;
+border-radius: 200px;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-weight: bold;
+
+}
+
+.acordion{
+background-color:black ;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+color: white;
+}
+
+
+
+
 #form {
-    width: 250px;
-    margin: 0 auto;
-    height: 50px;
-  }
-  
-  #form p {
-    text-align: center;
-  }
-  
-  #form label {
-    font-size: 20px;
-  }
-  
-  input[type="radio"] {
-    display: none;
-  }
-  
-  label {
-    color: grey;
-  }
-  
-  .clasificacion {
-    direction: rtl;
-    unicode-bidi: bidi-override;
-  }
-  
-  label:hover,
-  label:hover ~ label {
-    color: orange;
-  }
-  
-  input[type="radio"]:checked ~ label {
-    color: orange;
-  }
-  
+  width: 250px;
+  margin: 0 auto;
+  height: 50px;
+}
 
+#form p {
+  text-align: center;
+}
 
+#form label {
+  font-size: 20px;
+}
 
+input[type="radio"] {
+  display: none;
+}
 
+label {
+  color: grey;
+}
 
-  *{
-    box-sizing:border-box;
-  }
-  .rating {
-    
-    width:100%;
-    padding:2em;
-    
-    input[name="star"] {
-      display: none;
-      width: 0;
-      opacity: 0;
-      margin-left: -2px;
-  
-      &:focus ~ label svg {
-        fill: #f2a200;
-      }
-  
-      &:checked ~ label svg {
-        fill: #f2a200;
-      }
-    }
-    span {
-      display: inline-block;
-      position: relative;
-      float: right;
-      label {
-        float: right;
-        cursor: pointer;
-  
-        svg {
-          fill: #CCC;
-          color: transparent;
-          transition: color 0.2s ease-in-out;
-          width: 50px;
-          height: 50px;
-        }
-  
-        &:hover {
-          svg {
-            fill: #f2a200;
-          }
-  
-          ~ label {
-            svg {
-              fill: #f2a200;
-            }
-  
-            &.half {
-              svg {
-                fill: #f2a200;
-              }
-            }
-          }
-        }
-  
-        &.half {
-          overflow: hidden;
-          position: absolute;
-          width: 25px;
-          svg {
-            fill: none;
-          }
-  
-          &:hover {
-            svg {
-              fill: #f2a200;
-            }
-          }
-        }
-      }
-  
-      &:hover {
-        ~ span label svg {
-          fill: #f2a200;
-        }
-      }
-  
-      &.active ~ span {
-        label svg {
-          fill: #f2a200;
-        }
-      }
-    }
-  }
-  
-  /*presentational styles*/
-  html{
-    margin:0;
-    padding:0;
-  }
-  
-  .container {
-    width: 40em;
-    margin: 0 auto;
-  }
-  fieldset {
-    display: inline-block;
-    overflow: hidden;
-    padding: 0;
-    border: 0;
-  }
-  
-  small {
-    display: block;
-    text-align: right;
-  }
-  
-    code{
-      text-transform:lowercase;
-    
-  }
-  p{
-    line-height:1.5;
-  
-  }
-  footer{
-    width:100%;
-    padding: 2em 0;
-    background: darken(#363795, 5%);
-    
-    a{
-      color: #fefefe;
-      transition: color .2s ease-in;
-      
-      &:hover{
-        color:#cbb4d4;
-      }
-    }
-    h3{
-      text-transform: capitalize;
-    }
-  }
-  
-  
-  
+.clasificacion {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  text-align: end;
+}
+
+label:hover,
+label:hover ~ label {
+  color: orange;
+}
+
+input[type="radio"]:checked ~ label {
+  color: orange;
+}

@@ -31,23 +31,34 @@
 
 </div>
 
-  <ion-item>
-    <ion-label class="normal" >Foto</ion-label>
-        <ion-buttons slot="end">
-          <ion-button >
-            <label for="file-upload">
-              <ion-icon slot="icon-only" name="images"></ion-icon>
-            </label>
-            <input  id="file-upload" style="display: none;" type="file" accept="imagen/" >
-          </ion-button>
-        </ion-buttons>
-  </ion-item>
+<ion-item>
+  <ion-label  >Foto</ion-label>
+  <ion-buttons slot="end">
+    <ion-button >
+      <label for="file-upload">
+        <ion-icon slot="icon-only" name="images"></ion-icon>
+      </label>
+      <input (change)= "newImageUpload($event)" id="file-upload" style="display: none;" type="file" accept="imagen/">
+    </ion-button>
+  </ion-buttons>
+</ion-item>
 
+<ion-input [(ngModel)]="platillo.foto" ></ion-input>
 
-  <ion-button shape="round" fill="outline" shape="round" color="secondary" >
-    AGREGAR
+<ion-buttons >
+  <ion-button (click)="getPlatillo()" expand="block" fill="clear" shape="round">
+    
+      <ion-icon slot="icon-only" name="save-outline" color="dark"></ion-icon>
+    
   </ion-button>
+ </ion-buttons>
 
   </ion-card-content>
 </ion-content>
+
+
+
+ 
+ 
+
 

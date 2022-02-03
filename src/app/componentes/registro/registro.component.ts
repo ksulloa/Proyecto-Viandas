@@ -19,8 +19,6 @@ export class RegistroComponent implements OnInit {
 
   datos: UserI = {
     nombre: null,
-    direccion: null,
-    celular: null,
     correo: null,
     uid: null,
     password: null,

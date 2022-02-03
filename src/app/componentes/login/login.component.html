@@ -5,47 +5,44 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-
-
-
       <h3 ion-title class="ion-text-center">
         LOGIN
       </h3>
 
-
-
   </ion-toolbar>
-
 </ion-header>
 
 
-<pre></pre>
-  <ion-item>
-    <ion-label position="floating" >Correo</ion-label>
-    <ion-input [(ngModel)]="credenciales.correo"></ion-input>
-  </ion-item>
+<ion-content class="borde">
   
-  <ion-item>
-    <ion-label position="floating" >Contraseña</ion-label>
-    <ion-input type="password" [(ngModel)]="credenciales.password"></ion-input>
-  </ion-item>
 
-<pre></pre>
+  <ion-card-content class="margen">
+    <ion-icon class="imagen" color="dark" name="person-circle"></ion-icon>
 
+    <ion-item>
+      <ion-label position="floating" >Correo</ion-label>
+      <ion-input [(ngModel)]="credenciales.correo"></ion-input>
+    
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="floating" >Contraseña</ion-label>
+      <ion-input type="password" [(ngModel)]="credenciales.password"></ion-input>
+    </ion-item>
+  
+  <pre></pre>
+  
+     
+  <ion-button class="boton" (click)="login()">
+    Login
+  </ion-button>
    
-<ion-button (click)="login()">
-  LOGIN
-</ion-button>
- 
-<h4 pre class="ion-text-center"> ó</h4>
-
-<ion-button [routerLink]="['/registro']" routerLinkActive="router-link-active" >
-   REGISTRARSE
-</ion-button>
-
-
-
-
-<ion-content>
-
+  
+  <ion-button class="boton" [routerLink]="['/registro']" routerLinkActive="router-link-active" >
+    Registrarse
+  </ion-button>
+   
+  </ion-card-content>
 </ion-content>
+
+  

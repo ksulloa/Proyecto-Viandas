@@ -31,5 +31,6 @@ uploadImage(file: any, path:string, nombre: string ): Promise<string> {
   .subscribe();
   });
 }
+
 }
 

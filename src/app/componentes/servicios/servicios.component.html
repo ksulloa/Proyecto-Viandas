@@ -1,101 +1,103 @@
 <ion-header> 
 
-  <ion-toolbar>
-     
-    <h3 ion-title class="ion-text-center"> SERVICIOS
-       </h3>
-
-       <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
+  <ion-toolbar> 
+    
+      <h3 ion-title class="ion-text-center"> CATEGORIAS </h3>
 
       
-
-  </ion-toolbar>
-  
-</ion-header>
+      <ion-buttons slot="start" >
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+    
+  </ion-toolbar> 
+</ion-header> 
 
 <ion-content>
-  <h3 class="subtitulo, ion-text-center">Restaurantes</h3>
-
-<ion-card>
+  <ion-card color="dark">
+    <ion-card-content  >
+      <img class="borde" src="https://cloudfront-us-east-1.images.arcpublishing.com/eluniverso/6NUMBL73TBAKZAQRG2S35AGEKY.jpg" >
+      <ion-buttons slot="start">
+        <ion-button [routerLink]="['/comidatradicional']">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+          <label>Comida Tradicional</label>
+        </ion-button> 
+      </ion-buttons >
+    </ion-card-content>
+  </ion-card>
   
-
-<div  *ngFor="let restaurante of restaurantes" class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2  class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        {{restaurante.nombre}}
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong >RESTAUTANTES</strong> 
-        <ion-slides>
+  <ion-card color="dark">
+    <ion-card-content>
+      <img class="borde" src="https://s1.best-wallpaper.net/wallpaper/m/1807/Delicious-seafood-fish-oysters-shrimp_m.webp" >
+      <ion-buttons slot="start">
+        <ion-button [routerLink]="['/mariscos']">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+          <label>Mariscos</label>
+        </ion-button> 
+      </ion-buttons >
+     
+    </ion-card-content>
+  </ion-card>
   
-          <ion-slide >
-
-           
-            
-            <ion-card no-margin class="slider" >
-<ion-card-content>
-  <ion-buttons slot="end">
-    <ion-button >
-      <img src="https://cdn-icons.flaticon.com/png/512/1665/premium/1665680.png?token=exp=1642031252~hmac=485d698c35b176af8e26c8db2d7775e7" >
-    </ion-button>
-  </ion-buttons>
   
-</ion-card-content>
-            <img alt="local" class="foto" [src]='restaurante.foto'  >
-            <h4 class="alinear">Descripción: {{restaurante.descripcion}}</h4>
-            <h4 class="alinear" >valorciones :{{restaurante.numValoraciones}}</h4>
-            <h4 class="alinear">valoracion :{{restaurante.valoracion}}</h4>
-            
-                <ion-button color="#DB7093" >
-                  <img class="img" src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" >
-                  <h4>Número: {{restaurante.numero}}</h4>
-              </ion-button>
-
-              <ion-button color="#DB7093" >
-                <img class="img" src="https://cdn-icons.flaticon.com/png/512/2875/premium/2875433.png?token=exp=1642032652~hmac=319c9e661daa2b5a96591ed2cd4d9c86" >
-                <h4> Ubicación: {{restaurante.ubicacion}}</h4>
-            </ion-button>
-            <div>
-              <input id="radio1" type="radio" name="estrellas" value="1"><!--
-              --><label style="font-size: 20px;" for="radio1">★</label><!--
-              --><input id="radio2" type="radio" name="estrellas" value="2"><!--
-              --><label style="font-size: 20px;" for="radio2">★</label><!--
-              --><input id="radio3" type="radio" name="estrellas" value="3"><!--
-              --><label style="font-size: 20px;" for="radio3">★</label><!--
-              --><input id="radio4" type="radio" name="estrellas" value="4"><!--
-              --><label style="font-size: 20px;" for="radio4">★</label><!--
-              --><input id="radio5" type="radio" name="estrellas" value="5"><!--
-              --><label style="font-size: 20px;" for="radio5">★</label>  
-            </div>
-           </ion-card>
-           
-          </ion-slide>
-        </ion-slides>
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-</ion-card>
-
-
-<ion-card class="color">
-  <ion-card-content  >
-    <ion-buttons >
-      <ion-button  [routerLink]="['/agregar-local']">
-        <ion-icon class="icono" name="storefront-sharp"></ion-icon>
-        REGISTRAR LOCAL
-      </ion-button>
-    </ion-buttons>
-  </ion-card-content>
+  <ion-card color="dark">
+    <ion-card-content>
+      <img class="borde" src="https://s1.best-wallpaper.net/wallpaper/m/1612/Roast-steak_m.webp" >
+      <ion-buttons slot="start">
+        <ion-button [routerLink]="['/asados']" >
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+          <label>Asados</label>
+        </ion-button> 
+      </ion-buttons >
+    </ion-card-content>
+  </ion-card>
   
-</ion-card>
-
-
+  
+  <ion-card color="dark">
+    <ion-card-content>
+      <img class="borde" src="https://s1.1zoom.me/big0/50/Fast_food_Hamburger_Beer_Vegetables_Cutting_board_548282_1280x922.jpg" >
+      <ion-buttons slot="start">
+        <ion-button [routerLink]="['/comida']">
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+          <label>Comida Rápida</label>
+        </ion-button> 
+      </ion-buttons >
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card color="dark">
+    <ion-card-content>
+      <img class="borde" src="https://s1.1zoom.me/big0/198/Cocktail_Drinks_Lemons_453316.jpg" >
+      <ion-buttons slot="start">
+        <ion-button [routerLink]="['/bares']" >
+          <ion-icon name="chevron-forward-outline"></ion-icon>
+          <label>Bares</label>
+        </ion-button> 
+      </ion-buttons >
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+<ion-toolbar color="dark" >
+  <ion-segment value="all">
+    <ion-segment-button  detail= "true" [routerLink]="['/bienvenidos']"    value="all">
+      
+    <ion-icon name="home"></ion-icon>
+    Inicio      
+    </ion-segment-button>
+
+    <ion-segment-button value="favorites">
+      <ion-icon name="search"></ion-icon>
+      Buscar  
+    </ion-segment-button>
+
+    <ion-segment-button value="favorites">
+      <ion-icon name="person"></ion-icon>
+      Perfil  
+    </ion-segment-button>
+
+    <ion-segment-button value="fsdf">
+      <ion-icon name="heart"></ion-icon>
+      Favoritos
+    </ion-segment-button>
+  </ion-segment>
+</ion-toolbar>

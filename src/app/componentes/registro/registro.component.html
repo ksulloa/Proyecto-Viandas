@@ -1,35 +1,23 @@
-<ion-header class="ion-no-border" > 
- 
-  <ion-toolbar > 
+<ion-header>
+
+  <ion-toolbar>
+
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
+      <h3 ion-title class="ion-text-center">
+        REGISTRO
+      </h3>
 
-    <h3 ion-title class="ion-text-center">
-      LOGIN
-    </h3>
-    
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-
-
-
       <ion-card-content>
       <ion-item>
         <ion-label position="floating" >Nombre:</ion-label>
         <ion-input [(ngModel)]="datos.nombre" ></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating" >Direccion:</ion-label>
-        <ion-input [(ngModel)]="datos.direccion" ></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating" >Celular:</ion-label>
-        <ion-input type="number" [(ngModel)]="datos.celular" ></ion-input>
       </ion-item>
     
       <ion-item>
@@ -45,20 +33,14 @@
      <pre></pre>
 
 
-
-     <ion-button (click)="registrar()">
+     <ion-button class="boton" (click)="registrar()">
       Registrarme
      </ion-button>
 
-     <ion-button [routerLink]="['/login']" routerLinkActive="router-link-active" >
-     O Login
-    </ion-button>
+    
 
 
     </ion-card-content>
   
-  <div class="ion-text-center">
-    <img alt="login" src='https://cdn.pixabay.com/photo/2016/11/14/17/39/person-1824144_960_720.png' width="150" height="250"  >
-  </div>
 
 </ion-content>

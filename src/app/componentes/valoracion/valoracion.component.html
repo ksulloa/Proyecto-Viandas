@@ -1,109 +1,102 @@
 <ion-header> 
-
-  <ion-toolbar> 
-    <h3 ion-title class="ion-text-center"> VALORACIÓN</h3>
-
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    
+  <ion-toolbar>  
+    <h3 ion-title class="ion-text-center"> ⭐VALORACIÓN⭐
+       </h3>
+       <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
   </ion-toolbar>
-  
 </ion-header>
 
-
-
 <ion-content>
-  <h3 ion-title class="ion-text-center"> Calificanos</h3>
-  <img src="https://c.tenor.com/fNBtQnC4-iYAAAAi/come-on-lets-go.gif">
+  <h3 class="subtitulo, ion-text-center">Restaurantes</h3>
+<ion-card>
+
+<div *ngFor="let restaurante of restaurantes"  class="accordion" id="accordionExample">
+  <div  class="accordion-item">
+    <h2   class="accordion-header" id="headingOne">
+      <button  class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        {{restaurante.nombre}}
+      </button>
+    </h2>
+  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+<div class="accordion-body">
+
+          
+<ion-card no-margin class="slider" >
+  <ion-card-content>
+    <ion-fab *ngIf="admin" vertical="top" horizontal="start" slot="fixed">
+      <ion-fab-button color="dark">
+        <ion-icon name="arrow-forward"></ion-icon>
+        </ion-fab-button>
+          <ion-fab-list side="end" *ngIf="admin">
+            <ion-fab-button [routerLink]="['/agregar-platillos']"><ion-icon name="add"></ion-icon></ion-fab-button>
+          <ion-fab-button (click)="eliminar(restaurante)"><ion-icon name="restaurant"></ion-icon></ion-fab-button>
+        <ion-fab-button (click)="eliminar(restaurante)"><ion-icon name="trash"></ion-icon></ion-fab-button>
+      </ion-fab-list>
+    </ion-fab>  
+  </ion-card-content >
+
+<img alt="local" class="foto" [src]='restaurante.foto'  >
+  <ion-label class="alinear">Descripción: {{restaurante.descripcion}}
+    <ion-buttons slot="end">
+      <ion-button *ngIf="admin" (click)="editAtributo('descripcion',restaurante)"  >
+        <ion-icon name="create-outline"></ion-icon>
+       </ion-button>
+      </ion-buttons>
+    </ion-label>
+  <h4 class="alinear" >valoraciones: {{restaurante.numValoraciones}}</h4>
+<h4 class="alinear">valoracion: {{restaurante.valoracion}}</h4>
+            
+            
+<ion-button [href]="'https://wa.me/593' + restaurante.numero" target="blank" color="#DB7093" >
+  <img class="img" src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" >
+    <ion-buttons slot="start">
+      <ion-button *ngIf="admin" (click)="editAtributo('numero',restaurante)"  >
+        <ion-icon name="create-outline"></ion-icon>
+          </ion-button>
+            </ion-buttons>
+            <h4> {{restaurante.numero}}</h4>
+        </ion-button>
+      <ion-button  [href]="restaurante.ubicacion"  target="blank" color="#DB7093"  >
+    <img  class="img"  src="https://cdn-icons.flaticon.com/png/512/2875/premium/2875433.png?token=exp=1643762146~hmac=262942674dd824eeb6cb6f44a41f0a75" >
+  <h4>{{restaurante.direccion}}</h4>
+</ion-button>
+            
+<ion-card class="card">
+  <div>
+    <input [(ngModel)]="calificacionE.estrella1" id="radio1" type="radio" name="estrellas" value="1"><!--
+ --><label class="estrellas"  for="radio1"><ion-icon name="star"></ion-icon></label><!--
+ --><input  [(ngModel)]="calificacionE.estrella2"id="radio2" type="radio" name="estrellas" value="2"><!--
+ --><label class="estrellas"  for="radio2"><ion-icon name="star"></ion-icon></label><!--
+ --><input  [(ngModel)]="calificacionE.estrella3"id="radio3" type="radio" name="estrellas" value="3"><!--
+ --><label class="estrellas"  for="radio3"><ion-icon name="star"></ion-icon></label><!--
+ --><input [(ngModel)]="calificacionE.estrella4" id="radio4" type="radio" name="estrellas" value="4"><!--
+ --><label class="estrellas" for="radio4"><ion-icon name="star"></ion-icon></label><!--
+ --><input [(ngModel)]="calificacionE.estrella5" id="radio5" type="radio" name="estrellas" value="5"><!--
+ --><label class="estrellas" for="radio5"><ion-icon name="star"></ion-icon></label> 
   
+   <ion-icon class="enviar" (click)="getValoracion(restaurante)" name="checkmark-circle"></ion-icon>
+</div>
+             </ion-card>
+          </ion-card> 
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-card>
+
+
+<ion-card class="color" *ngIf="admin">
+  <ion-card-content  >
+    <ion-buttons >
+      <ion-button  [routerLink]="['/agregar-local']">
+        <ion-icon class="icono" name="storefront-sharp"></ion-icon>
+        REGISTRAR LOCAL
+      </ion-button>
+    </ion-buttons>
+  </ion-card-content>
   
-    <ion-col col-sm size="4">
-      
-  
-    
-    </ion-col>  
-    <form>
-     
-      <p>
-        <h5 label for="t1">¿Qué calificación nos da?<abbr title="Este campo es obligatorio" aria-label="required"><pre></pre></abbr></h5>
-        <input type="text" id="t1" name="servicio" list="l1" required
-               pattern="[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range ">
-        <datalist id="l1">
-          <option>Excelente</option>
-          <option>Buena</option>
-          <option>Regular</option>
-          <option>Mala</option>
-          <option>Pésima</option>
-         </datalist>
+</ion-card>
 
-      <p>
-        <h5 label for="t2">¿Cuál es tu dirección de correo electrónico? </h5>
-        <input type="email" id="t2" name="email">
-      
-      <p>
-        <h5 label for="t3">Deja un mensaje</h5><pre></pre>
-        <textarea id="t3" name="msg" maxlength="140" rows="5"></textarea>
-     
-      <p>
-        <button>Enviar</button>
-      </p>
-    </form>
-  
-    <svg style="position: absolute; width: 0; height: 0; overflow: hidden" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-      <symbol id="star" viewBox="0 0 28 28" preserveAspectRatio="xMaxYMax meet">
-                <title>Star Rating</title>
-                <path class="star"
-                      d="M13.996,22.501 L22.649,27.997 L20.352,17.637 L27.996,10.667 L17.930,9.768 L13.996,-0.003 L10.063,9.768 L-0.003,10.667 L7.641,17.637 L5.345,27.997 L13.996,22.501 Z"/>
-            </symbol>
-    </svg>
-    
-    
-    <div class="container">
-      <div class="rating">
-      <fieldset class="rating-fieldset">
-        <span><input type="checkbox" id="star5" class="rating-checkbox" value="5" name="star" /><label class="full" for="star5" title="Awesome - 5 stars">
-                                                            <svg role="img" aria-label="rating">
-                                                                <use xlink:href="#star"></use>
-                                                            </svg>
-                                                        </label>
-        <input type="checkbox" id="star4half" class="rating-checkbox" value="4.5" name="star" /><label class="half" for="star4half" title="Pretty good - 4.5 stars" name="star">    <svg role="img" aria-label="rating">                                                 <use xlink:href="#star"></use>                                           </svg>                                 
-          </label></span>
-        <span> <input type="checkbox" id="star4" class="rating-checkbox" value="4" name="star" /><label class="full" for="star4" title="Pretty good - 4 stars">
-                                                            <svg role="img" aria-label="rating">
-                                                                <use xlink:href="#star"></use>
-                                                            </svg>
-                                                        </label>
-        <input type="checkbox" id="star3half" class="rating-checkbox" value="3.5" name="star" /><label class="half" for="star3half" title="Meh - 3.5 stars">   <svg role="img" aria-label="rating">                                                 <use xlink:href="#star"></use>                                           </svg>                                
-         </label></span>
-        <span><input type="checkbox" id="star3" class="rating-checkbox" value="3" name="star" /><label class="full" for="star3" title="Meh - 3 stars" name="star">
-                                                            <svg role="img" aria-label="rating">
-                                                                <use xlink:href="#star"></use>
-                                                            </svg>
-                                                        </label>
-        <input type="checkbox" id="star2half" class="rating-checkbox" value="2.5" name="star" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars">   <svg role="img" aria-label="rating">                                                 <use xlink:href="#star"></use>                                           </svg>                                  
-          </label></span>
-        <span><input type="checkbox" id="star2" class="rating-checkbox" value="2" name="star" /><label class="full" for="star2" title="Kinda bad - 2 stars">
-                                                            <svg role="img" aria-label="rating">
-                                                                <use xlink:href="#star"></use>
-                                                            </svg>
-                                                        </label>
-        <input type="checkbox" id="star1half" class="rating-checkbox" value="1.5" name="star" /><label class="half" for="star1half" title="Meh - 1.5 stars">  <svg role="img" aria-label="rating">                                                 <use xlink:href="#star"></use>                                           </svg>                                   
-          </label></span>
-        <span><input type="checkbox" id="star1" class="rating-checkbox" value="1" name="star" /><label class="full" for="star1" title="Sucks big time - 1 star">
-                                                            <svg role="img" aria-label="rating">
-                                                                <use xlink:href="#star"></use>
-                                                            </svg>
-                                                        </label>
-        <input type="checkbox" id="starhalf" class="rating-checkbox" value="0.5" name="star" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars">
-          <svg role="img" aria-label="rating">                                                 <use xlink:href="#star"></use>                                           </svg>
-          </label></span>
-        
-    
-
-
-
-
-
-
-  
+</ion-content>

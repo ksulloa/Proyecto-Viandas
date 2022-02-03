@@ -5,7 +5,7 @@
       <h3 ion-title class="ion-text-center"> BIENVENIDOS </h3>
 
       
-      <ion-buttons slot="start">
+      <ion-buttons slot="start" >
         <ion-menu-button></ion-menu-button>
       </ion-buttons>
     
@@ -14,21 +14,44 @@
   
   
 <ion-content class="subtitulo, ion-text-center">
-  <div><h4 class="subtitulo">VIANDAS</h4>
-    <img src="https://unionjudicialsj.org/wp-content/uploads/2019/07/Gastronom%C3%ADa.gif" alt="Italian Trulli">
-  </div>
-  
+<div>
+  <img src="https://unionjudicialsj.org/wp-content/uploads/2019/07/Gastronom%C3%ADa.gif" alt="Italian Trulli">
+</div>
 
-
+<ion-item>
+  <ion-label (click)="presentAlert()">RICAURTE</ion-label>
+</ion-item>
 
 </ion-content>
+
     
+<ion-toolbar color="dark" >
+  <ion-segment value="all">
+    <ion-segment-button  detail= "true" [routerLink]="['/bienvenidos']"    value="all">
+    <ion-icon name="home"></ion-icon>
+    Inicio      
+    </ion-segment-button>
+
+    <ion-segment-button value="favorites" [routerLink]="['/servicios']" >
+      <ion-icon name="search"></ion-icon>
+      Buscar  
+    </ion-segment-button>
+
+    <ion-segment-button value="favorites" [routerLink]="['/perfil']">
+      <ion-icon name="person"></ion-icon>
+      Perfil  
+    </ion-segment-button>
+
+    <ion-segment-button value="fsdf">
+      <ion-icon name="heart"></ion-icon>
+      Favoritos
+    </ion-segment-button>
+    
+  </ion-segment>
+</ion-toolbar>
+
 
 
  
-
-
-
-
 
 

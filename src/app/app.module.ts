@@ -1,3 +1,9 @@
+import { FavoritosComponent } from './componentes/favoritos/favoritos.component';
+import { MariscosComponent } from './componentes/platos/mariscos/mariscos.component';
+import { AsadosComponent } from './componentes/platos/asados/asados.component';
+import { BaresComponent } from './componentes/platos/bares/bares.component';
+import { ComidatradicionalComponent } from './componentes/platos/comidatradicional/comidatradicional.component';
+import { PlatosComponent } from './componentes/platos/platos.component';
 import { AgregarPlatillosComponent } from './componentes/agregar-platillos/agregar-platillos.component';
 import { AgregarLocalComponent } from './componentes/agregar-local/agregar-local.component';
 import { Felicitaciones1Component } from './prueba/felicitaciones1/felicitaciones1.component';
@@ -37,6 +43,7 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { ComidaComponent } from './componentes/platos/comida/comida.component';
 
 
 @NgModule({
@@ -62,7 +69,14 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AhorrosComponent,
     Felicitaciones1Component,
     AgregarLocalComponent,
-    AgregarPlatillosComponent
+    AgregarPlatillosComponent,
+    PlatosComponent,
+    ComidatradicionalComponent,
+    ComidaComponent,
+    BaresComponent,
+    AsadosComponent,
+    MariscosComponent,
+    FavoritosComponent
   
     ],
   entryComponents: [],

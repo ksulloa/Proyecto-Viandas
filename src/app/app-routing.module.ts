@@ -1,3 +1,10 @@
+import { FavoritosComponent } from './componentes/favoritos/favoritos.component';
+import { MariscosComponent } from './componentes/platos/mariscos/mariscos.component';
+import { AsadosComponent } from './componentes/platos/asados/asados.component';
+import { BaresComponent } from './componentes/platos/bares/bares.component';
+import { ComidatradicionalComponent } from './componentes/platos/comidatradicional/comidatradicional.component';
+import { ComidaComponent } from './componentes/platos/comida/comida.component';
+import { PlatosComponent } from './componentes/platos/platos.component';
 import { AgregarPlatillosComponent } from './componentes/agregar-platillos/agregar-platillos.component';
 import { AgregarLocalComponent } from './componentes/agregar-local/agregar-local.component';
 import { Felicitaciones1Component } from './prueba/felicitaciones1/felicitaciones1.component';
@@ -20,7 +27,7 @@ import { ServiciosComponent } from './componentes/servicios/servicios.component'
 import { MenuComponent } from './componentes/menu/menu.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { BienvenidosComponent } from './componentes/bienvenidos/bienvenidos.component';
-
+import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
 
 
 
@@ -35,12 +42,19 @@ const routes: Routes = [
   {path: 'bienvenidos', component:  BienvenidosComponent},
     {path: 'login', component: LoginComponent},
     {path: 'menu', component: MenuComponent},
-    {path: 'perfil', component: PerfilComponent},
-    {path: 'servicios', component: ServiciosComponent},
-    {path: 'valoracion', component: ValoracionComponent},
+    {path: 'perfil', component: PerfilComponent,  canActivate: [AngularFireAuthGuard]},
+    {path: 'servicios', component: ServiciosComponent,  canActivate: [AngularFireAuthGuard]},
+    {path: 'valoracion', component: ValoracionComponent,  canActivate: [AngularFireAuthGuard]},
     {path: 'registro', component: RegistroComponent},
-    {path: 'agregar-local', component: AgregarLocalComponent},
-    {path: 'agregar-platillos', component: AgregarPlatillosComponent},
+    {path: 'agregar-local', component: AgregarLocalComponent,  canActivate: [AngularFireAuthGuard]},
+    {path: 'agregar-platillos', component: AgregarPlatillosComponent,  canActivate: [AngularFireAuthGuard]},
+    {path: 'platos', component: PlatosComponent,  canActivate: [AngularFireAuthGuard]},
+    {path: 'comida', component: ComidaComponent},
+    {path: 'comidatradicional', component: ComidatradicionalComponent},
+    {path: 'asados', component: AsadosComponent},
+    {path: 'mariscos', component: MariscosComponent},
+    {path: 'bares', component: BaresComponent},
+    {path: 'favoritos', component: FavoritosComponent},
     {path: '', component: BienvenidosComponent},
     {path: '**', redirectTo:'bienvevidos', pathMatch:'full' },
     {path: 'asistencia',component: AsistenciaComponent },

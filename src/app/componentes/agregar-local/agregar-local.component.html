@@ -12,9 +12,9 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content >
   
-  <div>
+  <div> 
     <ion-card-content>
       <ion-item>
         <ion-label position="floating" >Nombre Restaurante:</ion-label>
@@ -32,10 +32,14 @@
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating" >Ubicación:</ion-label>
+        <ion-label position="floating" >Dirección:</ion-label>
+        <ion-input [(ngModel)]="restaurante.direccion" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="floating" >Enlace de la ubicación del local</ion-label>
         <ion-input [(ngModel)]="restaurante.ubicacion" ></ion-input>
       </ion-item>
-    
     
       <ion-item>
         <ion-label  >Foto</ion-label>
@@ -48,21 +52,23 @@
           </ion-button>
         </ion-buttons>
       </ion-item>
-     
-      
-      
-      <ion-input [(ngModel)]="restaurante.foto" ></ion-input>
-      
-</ion-card-content>
-</div>
-<ion-buttons >
- <ion-button (click)="getRestaurant()" expand="block" fill="clear" shape="round">
-   
-     <ion-icon slot="icon-only" name="save-outline" color="dark"></ion-icon>
-   
- </ion-button>
-</ion-buttons>
+    <ion-input [(ngModel)]="restaurante.foto" ></ion-input>
 
+    <ion-buttons >
+      <ion-button (click)="getRestaurant()" expand="block" fill="clear" shape="round">
+        
+          <ion-icon slot="icon-only" name="save-outline" color="dark"></ion-icon>
+        
+      </ion-button>
+     </ion-buttons>   
+  </ion-card-content>
+  </div>
+  <ion-card-content>
+    <div>
+      <img class="imagen" src="https://www.tresce.com/blog/wp-content/uploads/2014/07/como-funciona-google-my-business.jpg" alt="">
+    </div>
+  </ion-card-content>
+  
 </ion-content>
   
 

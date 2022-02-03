@@ -1,64 +1,73 @@
-<ion-list-header>
+<ion-list>
   <ion-list-header>
-    MENÚ
+    <strong> MENÚ </strong>
   </ion-list-header>
-</ion-list-header>
+
     
 <ion-menu-toggle>
-  <ion-item detail= "true"  [routerLink]="['/bienvenidos']">
-    <ion-icon name="home-outline"></ion-icon>
-    <ion-label>
-      BIENVENIDOS
+  <ion-item class="menuseparacion" detail= "true"  [routerLink]="['/bienvenidos']">
+    <ion-icon color="dark" slot="start" name="home"></ion-icon>
+    <ion-label >
+      Home
     </ion-label>
   </ion-item>
  </ion-menu-toggle>
 
  
 <ion-menu-toggle *ngIf="login">
- <ion-item detail= "true"  [routerLink]="['/servicios']"  >
-  <ion-icon name="restaurant-outline"></ion-icon>
+ <ion-item class="menuseparacion" detail= "true"  [routerLink]="['/servicios']"  >
+  <ion-icon color="dark" slot="start" name="list-circle"></ion-icon>
    <ion-label>
-     SERVICIOS
+     Categorias
    </ion-label>
  </ion-item>
 </ion-menu-toggle>
 
 <ion-menu-toggle *ngIf="login">
- <ion-item detail= "true" [routerLink]="['/valoracion']"  >
-  <ion-icon name="star-half-outline"></ion-icon>
+  <ion-item class="menuseparacion" detail= "true"  [routerLink]="['/agregar-local']"  >
+   <ion-icon color="dark" slot="start" name="add-circle"></ion-icon>
+    <ion-label>
+      Agregar Local
+    </ion-label>
+  </ion-item>
+ </ion-menu-toggle>
+
+<ion-menu-toggle *ngIf="login">
+ <ion-item class="menuseparacion" detail= "true" [routerLink]="['/valoracion']"  >
+  <ion-icon color="dark" slot="start" name="star"></ion-icon>
    <ion-label>
-     VALORACIÓN
+     Valoración
    </ion-label>
  </ion-item>
 
 </ion-menu-toggle>
  
 <ion-menu-toggle *ngIf="login == false">
-<ion-item detail= "true"  [routerLink]="['/login']"   >
-  <ion-icon name="people-circle-outline"></ion-icon>
+<ion-item class="menuseparacion" detail= "true"  [routerLink]="['/login']"   >
+  <ion-icon color="dark" slot="start" name="people-circle"></ion-icon>
    <ion-label>
-     LOGIN
+     Login
    </ion-label>
  </ion-item>
 </ion-menu-toggle>
 
 <ion-menu-toggle *ngIf="login">
- <ion-item detail= "true"  [routerLink]="['/perfil']" >
-  <ion-icon name="person-circle-outline"></ion-icon>
+ <ion-item class="menuseparacion" detail= "true"  [routerLink]="['/perfil']" >
+  <ion-icon color="dark" slot="start" name="person-circle"></ion-icon>
     <ion-label>
-      PERFIL
+      Perfil
     </ion-label>
   </ion-item>
 </ion-menu-toggle>
 
 <ion-menu-toggle *ngIf="login ">
-  <ion-item detail="true" (click)="logout()">
-    <ion-icon name="log-in-outline"></ion-icon>
+  <ion-item class="menuseparacion" detail="true" (click)="logout()">
+    <ion-icon color="dark" slot="start" name="log-in"></ion-icon>
     <ion-label>
-     SALIR
+     Salir
     </ion-label>
     <ion-icon ></ion-icon>
   </ion-item>
  </ion-menu-toggle>
-
+</ion-list>
  

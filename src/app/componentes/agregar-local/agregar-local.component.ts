@@ -17,6 +17,7 @@ export class AgregarLocalComponent implements OnInit {
     nombre: null,
     restid: null,
     descripcion: null,
+    direccion:null,
     numero: null,
     ubicacion: null,
     foto: ' '
@@ -47,8 +48,8 @@ constructor(private auth: AuthService,
       const id = this.firestore.getId() ;
       this.restaurante.restid = id;
       await this.firestore.createRes(this.restaurante, path, id)
-      this.interaction.closeLoading();
       this.interaction.presentToast('Registrado el restaurante con exito')
+      this.router.navigate(['/servicios'])
      
   }
   async newImageUpload(event: any){
