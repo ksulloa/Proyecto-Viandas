@@ -1,6 +1,6 @@
 <ion-header> 
   <ion-toolbar>  
-    <h3 ion-title class="ion-text-center"> VALORACIÓN
+    <h3 ion-title class="ion-text-center"> Restaurantes
        </h3>
        <ion-buttons slot="start">
         <ion-menu-button></ion-menu-button>
@@ -9,10 +9,8 @@
 </ion-header>
 
 <ion-content>
-  <h3 class="subtitulo, ion-text-center">Restaurantes</h3>
 <ion-card>
-
-<div *ngFor="let restaurante of restaurantes"  class="accordion" id="accordionExample">
+<div *ngFor="let restaurante of restaurantes"   id="accordionExample">
   <div  class="accordion-item">
     <h2   class="accordion-header" id="headingOne">
       <button  class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -30,23 +28,36 @@
         <ion-icon name="arrow-forward"></ion-icon>
         </ion-fab-button>
           <ion-fab-list side="end" *ngIf="admin">
-            <ion-fab-button [routerLink]="['/agregar-platillos']"><ion-icon name="add"></ion-icon></ion-fab-button>
-          <ion-fab-button (click)="eliminar(restaurante)"><ion-icon name="restaurant"></ion-icon></ion-fab-button>
+          <ion-fab-button (click)="addPlato(categoria, restaurante)"><ion-icon name="add"></ion-icon></ion-fab-button>
+          <ion-fab-button (click)="verPlato(categoria, restaurante)"><ion-icon name="eye"></ion-icon></ion-fab-button>
         <ion-fab-button (click)="eliminar(restaurante)"><ion-icon name="trash"></ion-icon></ion-fab-button>
       </ion-fab-list>
     </ion-fab>  
   </ion-card-content >
 
-<img alt="local" class="foto" [src]='restaurante.foto'  >
-  <ion-label class="alinear">Descripción: {{restaurante.descripcion}}
-    <ion-buttons slot="end">
-      <ion-button *ngIf="admin" (click)="editAtributo('descripcion',restaurante)"  >
-        <ion-icon name="create-outline"></ion-icon>
-       </ion-button>
-      </ion-buttons>
-    </ion-label>
+  <ion-card-content class="foto" >
+    <img alt="local" [src]='restaurante.foto'  >
+
+      <ion-label class="alinear"> {{restaurante.descripcion}}
+
+
+
+            <ion-icon slot="end" *ngIf="admin" (click)="editAtributo('descripcion', restaurante)" name="create-outline"></ion-icon>
+ 
+
+      </ion-label>
+      
+  
+  </ion-card-content>
+ 
+
   <h4 class="alinear" >valoraciones: {{restaurante.numValoraciones}}</h4>
-<h4 class="alinear">valoracion: {{restaurante.valoracion}}</h4>
+
+  <h4 class="alinear">valoracion: {{restaurante.valoracion}}</h4>
+ 
+
+ 
+
             
             
 <ion-button [href]="'https://wa.me/593' + restaurante.numero" target="blank" color="#DB7093" >
@@ -97,7 +108,5 @@
     </div>
   </div>
 </ion-card>
-
-
 
 </ion-content>

@@ -1,18 +1,18 @@
-import { AuthService } from 'src/app/services/auth.service';
-import { PlatosComponent } from './../platos/platos.component';
+import { AgregarPlatillosComponent } from './../agregar-platillos/agregar-platillos.component';
+import { AuthService } from './../../services/auth.service';
 import { InteractionService } from './../../services/interaction.service';
 import { AlertController, ModalController } from '@ionic/angular';
 import { FirestoreService } from './../../services/firestore.service';
-import { Restaurantes, Platillos, Valoracion } from './../../models/models.component';
+import { Restaurantes, Platillos, Valoracion, Categoria } from './../../models/models.component';
+import { PlatosComponent } from './../platos/platos.component';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-valoracion',
-  templateUrl: './valoracion.component.html',
-  styleUrls: ['./valoracion.component.scss'],
+  selector: 'app-ver-restaurantes',
+  templateUrl: './ver-restaurantes.component.html',
+  styleUrls: ['./ver-restaurantes.component.scss'],
 })
-export class ValoracionComponent implements OnInit {
-
+export class VerRestaurantesComponent implements OnInit {
 
   restaurantes: Restaurantes[] = []
   
@@ -21,6 +21,10 @@ export class ValoracionComponent implements OnInit {
   estrellas: Valoracion[]=[]
   
   @Input() platillo: Platillos;
+  @Input() categoria: Categoria;
+  @Input() restaurante: Restaurantes;
+
+
 
   calificacionE = {
     estrella1: false,
@@ -40,16 +44,17 @@ admin=false;
   }
   
   ngOnInit() {
-    console.log("se creo la vista");
-    this.suma()
-    this.getRestaurantes()
+    console.log("se creo la vista", this.categoria);
+    this.getRestaurantes();
+    console.log("se creo la vista", this.restaurante);
+
     
   }
 
  getRestaurantes(){
 
   console.log('Restaurantes registrados', this.restaurantes)
-  const path ='Restaurante/';
+  const path = 'categorias/' + this.categoria.cid + '/restaurante';
   this.firestore.getCollection<Restaurantes>(path).subscribe(res =>{
     if(res){
       this.restaurantes = res;
@@ -59,11 +64,6 @@ admin=false;
     }
   })
  }
-
-  suma() {
-    console.log('estoy sumando');
-    
-  }
 
     getValoracion(resta: Restaurantes){
 
@@ -160,7 +160,7 @@ admin=false;
     
     async saveAtributo(name: string, input: any, restaurante: Restaurantes) {
       await this.interactionService.presentLoading('actualizando...')
-      const path = 'Restaurante';
+      const path = 'categorias/' + this.categoria.cid + '/restaurante/' ; 
       const id = restaurante.restid;
       const updateDoc = {
      
@@ -202,23 +202,14 @@ admin=false;
     }
     async deleteDoc(restaurante: Restaurantes) {
       await this.interactionService.presentLoading('eliminando...')
-      const path = 'Restaurante';
+      const path = 'categorias/' + this.categoria.cid + '/restaurante/' ; 
       const id = restaurante.restid;
       this.firestore.DeleteDoc(path, id).then( () => {
             this.interactionService.presentToast('eliminado con éxito')
             this.interactionService.closeLoading();
       })
     }
-    async verPlatos() {
-      const modal = await this.modalController.create({
-        component: PlatosComponent,
-        componentProps: {platillo: this.platillo},
-        mode: 'ios',
-        swipeToClose: true
-      });
-      return await modal.present();
-    }   
-
+   
 getUidAdmin() {
   this.auth.stateAuth().subscribe( res => {
         if (res !== null) {
@@ -232,7 +223,24 @@ getUidAdmin() {
         }
   });
 }
-
+async addPlato(categoria: Categoria, restaurante: Restaurantes) {
+  const modal = await this.modalController.create({
+    component: AgregarPlatillosComponent,
+    componentProps: {categoria, restaurante},
+    mode: 'ios',
+    swipeToClose: true
+  });
+  return await modal.present();
+}   
+async verPlato(categoria: Categoria, restaurante: Restaurantes) {
+  const modal = await this.modalController.create({
+    component: PlatosComponent,
+    componentProps: {categoria, restaurante},
+    mode: 'ios',
+    swipeToClose: true
+  });
+  return await modal.present();
+} 
 like(){
   
 }

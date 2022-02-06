@@ -1,0 +1,90 @@
+<ion-header> 
+    <ion-toolbar>  
+      <h3 ion-title class="ion-text-center"> ASADOS
+         </h3>
+         <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content>
+    
+    <ion-card>
+      <img alt="local" class="foto" *ngIf="restaurante"  [src]= restaurante.foto >
+      <ion-item>
+        <ion-label class="alinear" *ngIf="restaurante">{{restaurante.nombre}}</ion-label>
+      </ion-item>
+    </ion-card>
+
+    <h3 class="subtitulo, ion-text-center">PLATOS</h3>
+    
+  <ion-card *ngFor="let platillo of platillos">
+  
+  <div   class="accordion" id="accordionExample">
+    <div  class="accordion-item">
+      <h2   class="accordion-header" id="headingOne">
+        <button  class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        
+        </button>
+      </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+  <div class="accordion-body">
+  
+            
+  <ion-card no-margin class="inf" >
+    <ion-card-content>
+      <ion-fab  vertical="top" horizontal="start" slot="fixed">
+        <ion-fab-button color="dark">
+          <ion-icon name="arrow-forward"></ion-icon>
+          </ion-fab-button>
+            <ion-fab-list side="end" >
+              <ion-fab-button [routerLink]="['/agregar-platillos']"><ion-icon name="add"></ion-icon></ion-fab-button>
+            <ion-fab-button><ion-icon name="restaurant"></ion-icon></ion-fab-button>
+          <ion-fab-button ><ion-icon name="trash"></ion-icon></ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>  
+    </ion-card-content >
+  
+  <img alt="local" class="foto"  [src]= platillo.foto >
+
+
+    <ion-label class="alinear">Nombre: {{platillo.nombre}}
+      <ion-buttons slot="end">
+        <ion-button   >
+          <ion-icon name="create-outline"></ion-icon>
+         </ion-button>
+        </ion-buttons>
+      </ion-label>
+  
+    
+  <h4 class="alinear" >precio:{{platillo.precio}} </h4>
+  
+              
+              
+  <ion-button    color="#DB7093" >
+    <img class="img" src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" >
+      <ion-buttons slot="start">
+        <ion-button   >
+          <ion-icon name="create-outline"></ion-icon>
+            </ion-button>
+              </ion-buttons>
+              <h4></h4>
+          </ion-button>
+        <ion-button   >
+      <img  class="img"  src="https://cdn-icons.flaticon.com/png/512/2875/premium/2875433.png?token=exp=1643762146~hmac=262942674dd824eeb6cb6f44a41f0a75" >
+    <h4></h4>
+  </ion-button>
+              
+  <ion-card class="card">
+   
+               </ion-card>
+            </ion-card> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-card>
+  
+  
+  </ion-content>

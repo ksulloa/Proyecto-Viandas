@@ -23,24 +23,6 @@
  </ion-item>
 </ion-menu-toggle>
 
-<ion-menu-toggle *ngIf="login">
-  <ion-item class="menuseparacion" detail= "true"  [routerLink]="['/agregar-local']"  >
-   <ion-icon color="dark" slot="start" name="add-circle"></ion-icon>
-    <ion-label>
-      Agregar Local
-    </ion-label>
-  </ion-item>
- </ion-menu-toggle>
-
-<ion-menu-toggle *ngIf="login">
- <ion-item class="menuseparacion" detail= "true" [routerLink]="['/valoracion']"  >
-  <ion-icon color="dark" slot="start" name="star"></ion-icon>
-   <ion-label>
-     Valoración
-   </ion-label>
- </ion-item>
-
-</ion-menu-toggle>
  
 <ion-menu-toggle *ngIf="login == false">
 <ion-item class="menuseparacion" detail= "true"  [routerLink]="['/login']"   >

@@ -16,17 +16,12 @@
 <div>
   <ion-item>
     <ion-label position="stacked" >Nombre Platillo:</ion-label>
-    <ion-input ></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="stacked" >Descripcion:</ion-label>
-    <ion-input ></ion-input>
+    <ion-input [(ngModel)]="platillo.nombre" ></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label position="stacked" >Precio:</ion-label>
-    <ion-input ></ion-input>
+    <ion-input [(ngModel)]="platillo.precio"></ion-input>
   </ion-item>
 
 </div>
@@ -46,7 +41,7 @@
 <ion-input [(ngModel)]="platillo.foto" ></ion-input>
 
 <ion-buttons >
-  <ion-button (click)="getPlatillo()" expand="block" fill="clear" shape="round">
+  <ion-button (click)="agregarPlato()" expand="block" fill="clear" shape="round">
     
       <ion-icon slot="icon-only" name="save-outline" color="dark"></ion-icon>
     

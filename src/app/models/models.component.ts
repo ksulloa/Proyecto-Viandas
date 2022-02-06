@@ -21,15 +21,19 @@ export interface Restaurantes {
 export interface Valoracion{
   valor: number
 }
+
 export interface Platillos{
-  restid: string;
+  pid: string;
   nombre: string;
-  descripcion: string;
   precio: number;
   foto: string;
 }
   
- 
+export interface Categoria{
+  cid: string;
+  nombre: string;
+  img: string;
+} 
 
 
 

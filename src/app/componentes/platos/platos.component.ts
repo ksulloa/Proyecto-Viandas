@@ -1,6 +1,6 @@
 import { FirestoreService } from './../../services/firestore.service';
-import { Platillos } from './../../models/models.component';
-import { Component, OnInit } from '@angular/core';
+import { Platillos, Categoria, Restaurantes } from './../../models/models.component';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-platos',
@@ -10,6 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class PlatosComponent implements OnInit {
 
   platillos : Platillos []=[]
+
+  @Input() categoria: Categoria;
+  @Input() restaurante: Restaurantes;
 
 
 
@@ -21,7 +24,7 @@ export class PlatosComponent implements OnInit {
 
   getPlatillo(){
     console.log('Platillo registrados', this.platillos)
-  const path ='platillo/';
+    const path = 'categorias/' + this.categoria.cid + '/restaurante/' + this.restaurante.restid + '/platos/'; 
   this.firestore.getCollection<Platillos>(path).subscribe(res =>{
     if(res){
       this.platillos = res;

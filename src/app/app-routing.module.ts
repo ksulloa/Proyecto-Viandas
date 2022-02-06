@@ -1,9 +1,5 @@
+import { VerRestaurantesComponent } from './componentes/ver-restaurantes/ver-restaurantes.component';
 import { FavoritosComponent } from './componentes/favoritos/favoritos.component';
-import { MariscosComponent } from './componentes/platos/mariscos/mariscos.component';
-import { AsadosComponent } from './componentes/platos/asados/asados.component';
-import { BaresComponent } from './componentes/platos/bares/bares.component';
-import { ComidatradicionalComponent } from './componentes/platos/comidatradicional/comidatradicional.component';
-import { ComidaComponent } from './componentes/platos/comida/comida.component';
 import { PlatosComponent } from './componentes/platos/platos.component';
 import { AgregarPlatillosComponent } from './componentes/agregar-platillos/agregar-platillos.component';
 import { AgregarLocalComponent } from './componentes/agregar-local/agregar-local.component';
@@ -49,12 +45,8 @@ const routes: Routes = [
     {path: 'agregar-local', component: AgregarLocalComponent,  canActivate: [AngularFireAuthGuard]},
     {path: 'agregar-platillos', component: AgregarPlatillosComponent,  canActivate: [AngularFireAuthGuard]},
     {path: 'platos', component: PlatosComponent,  canActivate: [AngularFireAuthGuard]},
-    {path: 'comida', component: ComidaComponent},
-    {path: 'comidatradicional', component: ComidatradicionalComponent},
-    {path: 'asados', component: AsadosComponent},
-    {path: 'mariscos', component: MariscosComponent},
-    {path: 'bares', component: BaresComponent},
     {path: 'favoritos', component: FavoritosComponent},
+    {path: 'ver-Restaurantes', component: VerRestaurantesComponent},
     {path: '', component: BienvenidosComponent},
     {path: '**', redirectTo:'bienvevidos', pathMatch:'full' },
     {path: 'asistencia',component: AsistenciaComponent },
