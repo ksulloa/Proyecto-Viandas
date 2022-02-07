@@ -1,23 +1,20 @@
 <ion-header>
-
-  <ion-toolbar>
-
+  <ion-toolbar class="header_per">
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button class="iconoh"></ion-menu-button>
     </ion-buttons>
-
-
     <ion-title>
      Mi perfil
     </ion-title>
-
   </ion-toolbar>
-
 </ion-header>
 
 
 <ion-content>
-  <ion-card-content>
+  <ion-card>
+    <ion-card-content>
+      <ion-icon color="dark" class="imagen" name="person"></ion-icon>
+    </ion-card-content>
   
   <ion-list *ngIf="info">
     <ion-item>
@@ -32,14 +29,8 @@
       </ion-label>
       <ion-icon (click)="editAtributo('nombre')" slot="end" name="create"></ion-icon>
     </ion-item>
-    <ion-item>
-      <ion-label>
-        {{info.password}}
-      </ion-label>
-      <ion-icon (click)="editAtributo('contraseña')" slot="end" name="create"></ion-icon>
-    </ion-item>
   </ion-list>
-</ion-card-content>
+</ion-card>
 </ion-content>
 
 <ion-toolbar color="dark" >
@@ -54,15 +45,11 @@
       Buscar  
     </ion-segment-button>
 
-    <ion-segment-button value="favorites" [routerLink]="['/perfil']">
+    <ion-segment-button value="all"  [routerLink]="['/perfil']">
       <ion-icon name="person"></ion-icon>
       Perfil  
     </ion-segment-button>
 
-    <ion-segment-button value="fsdf">
-      <ion-icon name="heart"></ion-icon>
-      Favoritos
-    </ion-segment-button>
     
   </ion-segment>
 </ion-toolbar>

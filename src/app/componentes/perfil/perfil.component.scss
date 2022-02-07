@@ -1,18 +1,14 @@
-.whatsapp {
-    position:fixed;
-    width:60px;
-    height:60px;
-    bottom:40px;
-    right:40px;
-    background-color:#25d366;
-    color:#FFF;
-    border-radius:50px;
-    text-align:center;
-    font-size:30px;
-    z-index:100;
-  }
-  
-  .whatsapp-icon {
-    margin-top:13px;
-  }
-  
+  .header_per{
+    --background:linear-gradient(#941841,#D01732);
+    --color: white;
+    --text-align: center ;
+    --font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    }
+.iconoh{
+ --color: white;
+}
+.imagen{
+   font-size: 200px;
+  margin-left: 18%;
+ }     

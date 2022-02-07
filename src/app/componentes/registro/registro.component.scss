@@ -1,5 +1,57 @@
-.boton{
+.butt_personalizado{
     height: 40px;
-    width: 180px;
+    width: 150px;
     border-radius: 50px;
+    background-color: #941841;
+    color: white;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-right: 10px;
     }
+    
+    .margen{
+     margin-bottom: 10px;
+     margin-left: 10px;
+     margin-right: 10px;
+    }
+    
+    
+    .imagen{
+    font-size: 200px;
+    margin-left: 18%;
+    }
+    
+    .borde{
+    --border: solid 1px #000000;
+    --border-radius: 5px;
+    }
+    
+    .label{
+        margin-left: 10px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    
+    .header_per{
+    --background:linear-gradient(#941841,#D01732);
+    --color: white;
+    --text-align: center ;
+    --font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    }
+    
+    .iconoh{
+    --color: white;
+    }
+    
+    .input{
+margin-bottom: 10px;
+    }
+
+    .input1{
+        border:solid 2px #941841;
+        border-radius: 18px;
+        text-align: center;
+        height: 35px;
+        margin: 0%;
+    
+    }        

@@ -1,31 +1,49 @@
 <ion-header> 
 
-  <ion-toolbar> 
-    
-      <h3 ion-title class="ion-text-center"> BIENVENIDOS </h3>
+  <ion-toolbar class="header_per"> 
 
-      
-      <ion-buttons slot="start" >
-        <ion-menu-button></ion-menu-button>
+      <ion-buttons  class="iconoh" slot="start" >
+        <ion-menu-button class="iconoh"></ion-menu-button>
       </ion-buttons>
-    
+      <ion-title > BIENVENIDOS </ion-title>
   </ion-toolbar> 
 </ion-header> 
   
   
 <ion-content class="subtitulo, ion-text-center">
+  <ion-item (click)="presentAlert()" routerLinkActive="true">
+    <ion-label class="titulo_pe">RICAURTE</ion-label>
+    <ion-icon color="dark" slot="start" name="map"></ion-icon>
+  </ion-item>
+
 <div>
-  <img src="https://unionjudicialsj.org/wp-content/uploads/2019/07/Gastronom%C3%ADa.gif" alt="Italian Trulli">
+  <img class="imagen" src="assets/icon/logo.png">
+ 
 </div>
 
-<ion-item>
-  <ion-label (click)="presentAlert()">RICAURTE</ion-label>
+<ion-item  routerLinkActive="true">
+  <ion-label class="titulo_pe">CATEGORÍAS</ion-label>
+  <ion-icon color="dark" slot="start" name="grid"></ion-icon>
 </ion-item>
+
+<ion-item [routerLink]="['/servicios']" *ngFor="let categoria of categorias">
+  <ion-label class="letra"  >{{categoria.nombre}}</ion-label>
+  <ion-icon color="dark" slot="start" name="chevron-forward"></ion-icon>
+</ion-item>
+
+<ion-item >
+  <ion-buttons *ngIf="admin" slot="start">
+    <ion-button class="butt_personalizado" [routerLink]="['/agregar-categoria']">
+      <ion-icon slot="start" name="add"></ion-icon>
+      Nueva categoria
+    </ion-button>
+  </ion-buttons>
+</ion-item>
+
 
 </ion-content>
 
-    
-<ion-toolbar color="dark" >
+<ion-toolbar *ngIf="login" color="dark" >
   <ion-segment value="all">
     <ion-segment-button  detail= "true" [routerLink]="['/bienvenidos']"    value="all">
     <ion-icon name="home"></ion-icon>
@@ -42,10 +60,6 @@
       Perfil  
     </ion-segment-button>
 
-    <ion-segment-button value="fsdf">
-      <ion-icon name="heart"></ion-icon>
-      Favoritos
-    </ion-segment-button>
     
   </ion-segment>
 </ion-toolbar>

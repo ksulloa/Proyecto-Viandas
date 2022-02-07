@@ -1,3 +1,6 @@
+import { MenuEditPlatoComponent } from './componentes/menu-edit-plato/menu-edit-plato.component';
+import { MenuEditComponent } from './componentes/menu-edit/menu-edit.component';
+import { AgregarCategoriaComponent } from './componentes/agregar-categoria/agregar-categoria.component';
 import { VerRestaurantesComponent } from './componentes/ver-restaurantes/ver-restaurantes.component';
 import { FavoritosComponent } from './componentes/favoritos/favoritos.component';
 import { PlatosComponent } from './componentes/platos/platos.component';
@@ -35,7 +38,7 @@ const uidAdmin = 'd1PEtAiS9oSEyOdRsKTH7gMxDDH3';
 
 
 const routes: Routes = [
-  {path: 'bienvenidos', component:  BienvenidosComponent},
+  {path: 'bienvenidos', component:  BienvenidosComponent, canActivate: [AngularFireAuthGuard]},
     {path: 'login', component: LoginComponent},
     {path: 'menu', component: MenuComponent},
     {path: 'perfil', component: PerfilComponent,  canActivate: [AngularFireAuthGuard]},
@@ -47,6 +50,9 @@ const routes: Routes = [
     {path: 'platos', component: PlatosComponent,  canActivate: [AngularFireAuthGuard]},
     {path: 'favoritos', component: FavoritosComponent},
     {path: 'ver-Restaurantes', component: VerRestaurantesComponent},
+    {path: 'menu-edit', component: MenuEditComponent},
+    {path: 'menu-edit-plato', component: MenuEditPlatoComponent},
+    {path: 'agregar-categoria', component: AgregarCategoriaComponent},
     {path: '', component: BienvenidosComponent},
     {path: '**', redirectTo:'bienvevidos', pathMatch:'full' },
     {path: 'asistencia',component: AsistenciaComponent },

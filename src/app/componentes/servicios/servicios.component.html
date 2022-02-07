@@ -1,14 +1,11 @@
 <ion-header> 
 
-  <ion-toolbar> 
+  <ion-toolbar class="header_per"> 
     
-      <h3 ion-title class="ion-text-center"> CATEGORIAS </h3>
-
-      
+      <ion-title class="ion-text-center"> CATEGORIAS </ion-title>
       <ion-buttons slot="start" >
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
-    
+        <ion-menu-button class="iconoh"></ion-menu-button>
+      </ion-buttons>  
   </ion-toolbar> 
 </ion-header> 
 
@@ -18,12 +15,16 @@
       <img class="borde" src={{categoria.img}} >
       <ion-buttons slot="start">
         <ion-button [routerLink]="['/comidatradicional']">
-          <ion-icon name="chevron-forward-outline"></ion-icon>
-          <label>{{categoria.nombre}}</label>
+          <ion-icon name="chevron-forward"></ion-icon>
+          <label color="dark" >{{categoria.nombre}}</label>
         </ion-button> 
 
         <ion-button *ngIf="admin" (click)="addRestaurantes(categoria)"  expand="block" fill="clear" shape="round">
           <ion-icon name="add"></ion-icon>
+        </ion-button>
+
+        <ion-button *ngIf="admin" (click)="eliminar(categoria)" expand="block" fill="clear" shape="round">
+          <ion-icon name="trash"></ion-icon>
         </ion-button>
 
         <ion-button (click)="verRestaurantes(categoria)"  expand="block" fill="clear" shape="round">
@@ -54,9 +55,6 @@
       Perfil  
     </ion-segment-button>
 
-    <ion-segment-button value="fsdf">
-      <ion-icon name="heart"></ion-icon>
-      Favoritos
-    </ion-segment-button>
+  
   </ion-segment>
 </ion-toolbar>

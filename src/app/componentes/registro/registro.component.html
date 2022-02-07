@@ -1,46 +1,52 @@
 <ion-header>
 
-  <ion-toolbar>
+  <ion-toolbar class="header_per">
 
     <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+      <ion-menu-button class="iconoh"></ion-menu-button>
     </ion-buttons>
-      <h3 ion-title class="ion-text-center">
-        REGISTRO
-      </h3>
-
+      <ion-title>REGISTRO</ion-title>
   </ion-toolbar>
 </ion-header>
 
 
-<ion-content>
-      <ion-card-content>
-      <ion-item>
-        <ion-label position="floating" >Nombre:</ion-label>
-        <ion-input [(ngModel)]="datos.nombre" ></ion-input>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label position="floating" >Correo:</ion-label>
-        <ion-input [(ngModel)]="datos.correo" ></ion-input>
+<ion-content class="borde">
+  
+      <ion-card-content class="margen">
+
+        <ion-card-content>
+          <ion-icon class="imagen"  name="person-add"></ion-icon>
+        </ion-card-content>
+        
+
+        <ion-label class="label" >Nombre</ion-label>  
+      <ion-item class="input">
+        <ion-icon slot="start"name="person-circle"></ion-icon>
+        <ion-input class="input1" [(ngModel)]="datos.nombre" ></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label position="floating">Contraseña:</ion-label>
-        <ion-input  type= "password" [(ngModel)]="datos.password"></ion-input>
+      <ion-label class="label" >Correo</ion-label>
+      <ion-item class="input">
+        <ion-icon slot="start" name="mail"></ion-icon>
+        <ion-input class="input1" [(ngModel)]="datos.correo" ></ion-input>
+      </ion-item>
+
+      <ion-label class="label" >Contraseña</ion-label>
+      <ion-item class="input">
+        <ion-icon slot="start" name="lock-closed"></ion-icon>
+        <ion-input class="input1" type= "password" [(ngModel)]="datos.password"></ion-input>
       </ion-item>
 
      <pre></pre>
 
-
-     <ion-button class="boton" (click)="registrar()">
-      Registrarme
-     </ion-button>
-
-    
-
+<ion-buttons slot="start">
+  <ion-button class="butt_personalizado" (click)="registrar()">
+    Registrarme
+   </ion-button>
+</ion-buttons>
+     
 
     </ion-card-content>
-  
+ 
 
 </ion-content>

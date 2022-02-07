@@ -1,16 +1,13 @@
 <ion-header> 
 
-  <ion-toolbar>
+  <ion-toolbar class="header_per">
      
-    <h3 ion-title class="ion-text-center"> AGREGAR LOCAL
-       </h3>
-       <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
-      </ion-buttons>
+    <ion-title class="ion-text-center"> AGREGAR LOCAL
+       </ion-title>
 
       <ion-buttons slot="end" >
-        <ion-button (click)="cerrar()">
-          <ion-icon slot="start" name="close"></ion-icon>
+        <ion-button class="iconoh" (click)="cerrar()">
+          <ion-icon  slot="start" name="close"></ion-icon>
         </ion-button>
       </ion-buttons>
 
@@ -19,66 +16,62 @@
 
 
 <ion-content >
+  <ion-card>
+    <ion-item class="input">
+      <h5 *ngIf="categoria">Agrega un nuevo restaurante a {{categoria.nombre}}</h5>
+    
+      <ion-icon color="dark" slot="start" name="add-circle"></ion-icon>
+    </ion-item>
   
-  <ion-label *ngIf="categoria"></ion-label>
-
-  <div> 
     <ion-card-content>
-      <ion-item>
-        <ion-label position="floating" >Nombre Restaurante:</ion-label>
+      
+      <ion-label class="label" >Nombre Restaurante</ion-label>
+      <ion-item class="input1">
         <ion-input [(ngModel)]="restaurante.nombre" ></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label position="floating" >Descripcion:</ion-label>
+      <ion-label class="label" >Descripcion</ion-label>
+      <ion-item class="input1">
         <ion-input [(ngModel)]="restaurante.descripcion" ></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label position="floating" >Número:</ion-label>
+      <ion-label class="label">Número</ion-label>
+      <ion-item class="input1">
         <ion-input [(ngModel)]="restaurante.numero" ></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label position="floating" >Dirección:</ion-label>
+      <ion-label class="label">Dirección</ion-label>
+      <ion-item class="input1">
         <ion-input [(ngModel)]="restaurante.direccion" ></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label position="floating" >Enlace de la ubicación del local</ion-label>
+      <ion-label class="label">Enlace de la ubicación del local</ion-label>
+      <ion-item class="input1">
         <ion-input [(ngModel)]="restaurante.ubicacion" ></ion-input>
       </ion-item>
-    
-      <ion-item>
-        <ion-label  >Foto</ion-label>
+
+      <ion-label  >Foto</ion-label>
+      <ion-item class="input1"> 
         <ion-buttons slot="end">
           <ion-button >
             <label for="file-upload">
-              <ion-icon slot="icon-only" name="images"></ion-icon>
+              <ion-icon color="dark" slot="icon-only" name="images"></ion-icon>
             </label>
-            <input (change)= "newImageUpload($event)" id="file-upload" style="display: none;" type="file" accept="imagen/">
           </ion-button>
         </ion-buttons>
+        <input (change)= "newImageUpload($event)" id="file-upload" style="display: none;" type="file" accept="imagen/">
+        <ion-input [(ngModel)]="restaurante.foto" ></ion-input>
       </ion-item>
-    <ion-input [(ngModel)]="restaurante.foto" ></ion-input>
-
-    <ion-buttons >
-      <ion-button (click)="agregarRestaurante()" expand="block" fill="clear" shape="round">
-        
-          <ion-icon slot="icon-only" name="save-outline" color="dark"></ion-icon>
-        
-      </ion-button>
-     </ion-buttons>  
+     
+      <ion-buttons class="butt_personalizado" >
+        <ion-button class="iconoh"  (click)="agregarRestaurante()" expand="block" fill="clear" shape="round"> 
+            <ion-icon slot="icon-only" name="save" ></ion-icon>
+        </ion-button>
+        <ion-label>Guardar</ion-label>
+       </ion-buttons>
        
-
   </ion-card-content>
-  </div>
-  <ion-card-content>
-    <div>
-      <img class="imagen" src="https://www.tresce.com/blog/wp-content/uploads/2014/07/como-funciona-google-my-business.jpg" alt="">
-    </div>
-  </ion-card-content>
-  
+</ion-card> 
 </ion-content>
   
 

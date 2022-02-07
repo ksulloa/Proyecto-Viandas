@@ -1,14 +1,11 @@
-<ion-header>
+<ion-header >
 
-  <ion-toolbar>
+  <ion-toolbar class="header_per">
 
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
+    <ion-buttons class="iconoh" slot="start">
+      <ion-menu-button class="iconoh"></ion-menu-button>
     </ion-buttons>
-      <h3 ion-title class="ion-text-center">
-        LOGIN
-      </h3>
-
+      <ion-title>LOGIN</ion-title> 
   </ion-toolbar>
 </ion-header>
 
@@ -17,30 +14,38 @@
   
 
   <ion-card-content class="margen">
-    <ion-icon class="imagen" color="dark" name="person-circle"></ion-icon>
+    
+    <ion-card-content>
+      <ion-icon class="imagen" color="dark" name="person-circle"></ion-icon>
+    </ion-card-content>
+    
 
-    <ion-item>
-      <ion-label position="floating" >Correo</ion-label>
-      <ion-input [(ngModel)]="credenciales.correo"></ion-input>
-    
+    <ion-label class="label" >Correo</ion-label>
+    <ion-item class="input">
+      <ion-icon slot="start" name="mail"></ion-icon>
+      <ion-input class="input1"  [(ngModel)]="credenciales.correo"></ion-input>
     </ion-item>
-    
-    <ion-item>
-      <ion-label position="floating" >Contraseña</ion-label>
-      <ion-input type="password" [(ngModel)]="credenciales.password"></ion-input>
+
+
+    <ion-label  class="label" >Contraseña</ion-label>
+    <ion-item class="input">
+      <ion-icon slot="start" name="lock-closed"></ion-icon>
+      <ion-input class="input1" type="password" [(ngModel)]="credenciales.password"></ion-input>
     </ion-item>
   
   <pre></pre>
   
+   <ion-buttons slot="start">
+    <ion-button class="butt_personalizado"(click)="login()">
+      Login
+    </ion-button>
      
-  <ion-button class="boton" (click)="login()">
-    Login
-  </ion-button>
-   
+    
+    <ion-button class="butt_personalizado" [routerLink]="['/registro']" routerLinkActive="router-link-active" >
+      Registrarse
+    </ion-button>
+   </ion-buttons>  
   
-  <ion-button class="boton" [routerLink]="['/registro']" routerLinkActive="router-link-active" >
-    Registrarse
-  </ion-button>
    
   </ion-card-content>
 </ion-content>

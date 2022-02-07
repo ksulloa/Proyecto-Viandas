@@ -1,9 +1,12 @@
 <ion-header> 
-  <ion-toolbar>  
+  <ion-toolbar class="header_per">  
     <h3 ion-title class="ion-text-center"> Restaurantes
        </h3>
-       <ion-buttons slot="start">
-        <ion-menu-button></ion-menu-button>
+
+      <ion-buttons slot="end" >
+        <ion-button class="iconoh" (click)="cerrar()">
+          <ion-icon slot="start" name="close"></ion-icon>
+        </ion-button>
       </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -23,84 +26,69 @@
           
 <ion-card no-margin class="inf" >
   <ion-card-content>
-    <ion-fab *ngIf="admin" vertical="top" horizontal="start" slot="fixed">
+    <ion-fab vertical="top" horizontal="start" slot="fixed">
       <ion-fab-button color="dark">
         <ion-icon name="arrow-forward"></ion-icon>
         </ion-fab-button>
-          <ion-fab-list side="end" *ngIf="admin">
-          <ion-fab-button (click)="addPlato(categoria, restaurante)"><ion-icon name="add"></ion-icon></ion-fab-button>
-          <ion-fab-button (click)="verPlato(categoria, restaurante)"><ion-icon name="eye"></ion-icon></ion-fab-button>
-        <ion-fab-button (click)="eliminar(restaurante)"><ion-icon name="trash"></ion-icon></ion-fab-button>
+          <ion-fab-list side="end" >
+          <ion-fab-button *ngIf="admin" (click)="addPlato(categoria, restaurante)"><ion-icon name="add"></ion-icon></ion-fab-button>
+          <ion-fab-button (click)="verPlato(categoria, restaurante)"><ion-icon name="restaurant"></ion-icon></ion-fab-button>
+        <ion-fab-button *ngIf="admin" (click)="eliminar(restaurante)"><ion-icon name="trash-bin"></ion-icon></ion-fab-button>
+        <ion-fab-button *ngIf="admin" (click)="openMenu(restaurante, categoria)"><ion-icon name="create"></ion-icon></ion-fab-button>
       </ion-fab-list>
     </ion-fab>  
   </ion-card-content >
 
+ 
   <ion-card-content class="foto" >
-    <img alt="local" [src]='restaurante.foto'  >
-
-      <ion-label class="alinear"> {{restaurante.descripcion}}
-
-
-
-            <ion-icon slot="end" *ngIf="admin" (click)="editAtributo('descripcion', restaurante)" name="create-outline"></ion-icon>
- 
-
-      </ion-label>
-      
-  
+    <img alt="local" [src]='restaurante.foto'  > 
   </ion-card-content>
- 
 
-  <h4 class="alinear" >valoraciones: {{restaurante.numValoraciones}}</h4>
+  <ion-card-content class="cardd">
+    <ion-label class="alinear"> {{restaurante.descripcion}}
+    </ion-label>
+    
+  </ion-card-content>
 
-  <h4 class="alinear">valoracion: {{restaurante.valoracion}}</h4>
- 
-
- 
-
-            
-            
-<ion-button [href]="'https://wa.me/593' + restaurante.numero" target="blank" color="#DB7093" >
-  <img class="img" src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" >
-    <ion-buttons slot="start">
-      <ion-button *ngIf="admin" (click)="editAtributo('numero',restaurante)"  >
-        <ion-icon name="create-outline"></ion-icon>
-          </ion-button>
-            </ion-buttons>
-            <h4> {{restaurante.numero}}</h4>
+  <ion-card-content>
+    <ion-buttons class="buttonsp" slot="start">
+      <ion-button  [href]="'https://wa.me/593' + restaurante.numero" target="blank"  >
+        <img class="img" src="https://cdn-icons-png.flaticon.com/512/5968/5968841.png" >
         </ion-button>
-        
-      <ion-button  [href]="restaurante.ubicacion"  target="blank" color="#DB7093"  >
-    <img  class="img"  src="https://cdn-icons.flaticon.com/png/512/2875/premium/2875433.png?token=exp=1643762146~hmac=262942674dd824eeb6cb6f44a41f0a75" >
-  <h4>{{restaurante.direccion}}</h4>
-</ion-button>
+      <ion-label class="alinear">{{restaurante.numero}}</ion-label>    
+    </ion-buttons>
+
+    <ion-buttons class="buttonsp" slot="start">
+      <ion-button  [href]="restaurante.ubicacion"  target="blank"  >
+        <img  class="img"  src="https://cdn-icons.flaticon.com/png/512/2875/premium/2875433.png?token=exp=1643762146~hmac=262942674dd824eeb6cb6f44a41f0a75" >
+        </ion-button>
+      <ion-label class="alinear">{{restaurante.direccion}}</ion-label>       
+    </ion-buttons>
+  </ion-card-content>
+     
+ 
+ 
+   <!--<h4 class="alinear" >valoraciones: {{restaurante.numValoraciones}}</h4>
+  <h4 class="alinear">valoracion: {{restaurante.valoracion}}</h4>-->
 
             
-<ion-card class="card">
+<!--  <ion-card class="card">
   <div>
-    <input [(ngModel)]="calificacionE.estrella1" id="radio1" type="radio" name="estrellas" value="1"><!--
- --><label class="estrellas"  for="radio1"><ion-icon name="star"></ion-icon></label><!--
- --><input  [(ngModel)]="calificacionE.estrella2"id="radio2" type="radio" name="estrellas" value="2"><!--
- --><label class="estrellas"  for="radio2"><ion-icon name="star"></ion-icon></label><!--
- --><input  [(ngModel)]="calificacionE.estrella3"id="radio3" type="radio" name="estrellas" value="3"><!--
- --><label class="estrellas"  for="radio3"><ion-icon name="star"></ion-icon></label><!--
- --><input [(ngModel)]="calificacionE.estrella4" id="radio4" type="radio" name="estrellas" value="4"><!--
- --><label class="estrellas" for="radio4"><ion-icon name="star"></ion-icon></label><!--
- --><input [(ngModel)]="calificacionE.estrella5" id="radio5" type="radio" name="estrellas" value="5"><!--
- --><label class="estrellas" for="radio5"><ion-icon name="star"></ion-icon></label> 
+    <input [(ngModel)]="calificacionE.estrella1" id="radio1" type="radio" name="estrellas" value="1">
+ <label class="estrellas"  for="radio1"><ion-icon name="star"></ion-icon></label>
+ <input  [(ngModel)]="calificacionE.estrella2"id="radio2" type="radio" name="estrellas" value="2">
+ <label class="estrellas"  for="radio2"><ion-icon name="star"></ion-icon></label>
+ <input  [(ngModel)]="calificacionE.estrella3"id="radio3" type="radio" name="estrellas" value="3">
+ <label class="estrellas"  for="radio3"><ion-icon name="star"></ion-icon></label>
+ <input [(ngModel)]="calificacionE.estrella4" id="radio4" type="radio" name="estrellas" value="4">
+ <label class="estrellas" for="radio4"><ion-icon name="star"></ion-icon></label>
+ <input [(ngModel)]="calificacionE.estrella5" id="radio5" type="radio" name="estrellas" value="5">
+ <label class="estrellas" for="radio5"><ion-icon name="star"></ion-icon></label> 
   
    <ion-icon class="enviar" (click)="getValoracion(restaurante)" name="checkmark-circle"></ion-icon>
 </div>
 
-             </ion-card>
-
-             <ion-item>
-              <ion-buttons slot="start">
-                <ion-button >
-                  <ion-icon slot="start" name="heart"></ion-icon>
-                </ion-button>
-              </ion-buttons>
-            </ion-item>
+             </ion-card>-->
             
           </ion-card> 
         </div>

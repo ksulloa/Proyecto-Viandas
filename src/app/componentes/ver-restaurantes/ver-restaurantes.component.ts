@@ -1,7 +1,8 @@
+import { MenuEditComponent } from './../menu-edit/menu-edit.component';
 import { AgregarPlatillosComponent } from './../agregar-platillos/agregar-platillos.component';
 import { AuthService } from './../../services/auth.service';
 import { InteractionService } from './../../services/interaction.service';
-import { AlertController, ModalController } from '@ionic/angular';
+import { AlertController, ModalController, PopoverController } from '@ionic/angular';
 import { FirestoreService } from './../../services/firestore.service';
 import { Restaurantes, Platillos, Valoracion, Categoria } from './../../models/models.component';
 import { PlatosComponent } from './../platos/platos.component';
@@ -39,7 +40,8 @@ admin=false;
     private alertController: AlertController,
     private interactionService: InteractionService,
     public modalController: ModalController,
-    private auth: AuthService) {
+    private auth: AuthService,
+    private popoverController: PopoverController,) {
  this.getUidAdmin();
   }
   
@@ -241,7 +243,20 @@ async verPlato(categoria: Categoria, restaurante: Restaurantes) {
   });
   return await modal.present();
 } 
-like(){
-  
+cerrar(){
+  this.modalController.dismiss()
+    
+}
+async  openMenu(restaurante :Restaurantes, categoria: Categoria){
+  console.log('abrir menu')
+  const menu = await this.popoverController.create({
+    component: MenuEditComponent,
+    translucent: true,
+    componentProps: {restaurante, categoria}
+  });
+  await menu.present();
+
+  const { role } = await menu.onDidDismiss();
+  console.log('onDidDismiss resolved with role', role);
 }
 }

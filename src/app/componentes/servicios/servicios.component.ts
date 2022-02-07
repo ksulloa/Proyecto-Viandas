@@ -26,7 +26,9 @@ export class ServiciosComponent implements OnInit {
 
   constructor(public firestore: FirestoreService,
     public modalController: ModalController,
-    private  auth :AuthService) {
+    private  auth :AuthService,
+    private interactionService: InteractionService,
+    private alertController: AlertController,) {
       this.getUidAdmin();
   }
   
@@ -73,5 +75,41 @@ getUidAdmin() {
           this.admin = false;
         }
   });
+}
+async eliminar(categoria: Categoria) {
+  const alert = await this.alertController.create({
+    cssClass: 'my-custom-class',
+    header: 'Eliminar ',
+
+    buttons: [
+
+      {
+        text: 'Aceptar',
+        handler: (ev) => {
+          console.log('Confirm Ok -> ', ev);
+          this.deleteDoc(categoria)
+        }
+      },
+      {
+        text: 'Cancelar',
+        role: 'cancel',
+        cssClass: 'secondary',
+        handler: () => {
+          console.log('Confirm Cancel');
+        }
+      }
+    ]
+  });
+
+  await alert.present();
+}
+async deleteDoc(categoria:Categoria) {
+  await this.interactionService.presentLoading('eliminando...')
+  const path = 'categorias/';
+  const id = categoria.cid;
+  this.firestore.DeleteDoc(path, id).then( () => {
+        this.interactionService.presentToast('eliminado con éxito')
+        this.interactionService.closeLoading();
+  })
 }
 }

@@ -1,3 +1,6 @@
+import { MenuEditPlatoComponent } from './componentes/menu-edit-plato/menu-edit-plato.component';
+import { MenuEditComponent } from './componentes/menu-edit/menu-edit.component';
+import { AgregarCategoriaComponent } from './componentes/agregar-categoria/agregar-categoria.component';
 import { VerRestaurantesComponent } from './componentes/ver-restaurantes/ver-restaurantes.component';
 import { FavoritosComponent } from './componentes/favoritos/favoritos.component';
 import { PlatosComponent } from './componentes/platos/platos.component';
@@ -69,7 +72,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AgregarPlatillosComponent,
     PlatosComponent,
     FavoritosComponent,
-    VerRestaurantesComponent
+    VerRestaurantesComponent,
+    AgregarCategoriaComponent,
+    MenuEditComponent,
+    MenuEditPlatoComponent
   
     ],
   entryComponents: [],

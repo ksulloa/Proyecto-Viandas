@@ -118,3 +118,14 @@ label:hover ~ label {
 input[type="radio"]:checked ~ label {
   color: orange;
 }
+
+.header_per{
+  --background:linear-gradient(#941841,#D01732);
+  --color: white;
+  --text-align: center ;
+  --font-family: Verdana, Geneva, Tahoma, sans-serif;
+  
+  }
+  .iconoh{
+    --color: white;
+    }
