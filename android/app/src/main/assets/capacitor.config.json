@@ -1,0 +1,6 @@
+{
+	"appId": "com.geolocalizacion.glocalizacion",
+	"appName": "geolocalizacion",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

@@ -1,6 +1,6 @@
 {
-	"appId": "io.ionic.starter",
-	"appName": "PediditosExpress",
-	"webDir": "www",
-	"bundledWebRuntime": false
+  "appId": "com.geolocalizacion.glocalizacion",
+  "appName": "geolocalizacion",
+  "webDir": "www",
+  "bundledWebRuntime": false
 }
